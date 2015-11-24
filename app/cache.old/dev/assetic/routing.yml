@@ -1,0 +1,5 @@
+_assetic:
+    resource: .
+    type: assetic
+_app:
+    resource: 'C:/Users/spl01001/workspace/dashboard-portal_DEV/app/config/routing_dev.yml'

@@ -1,0 +1,3 @@
+rmcargo_dashboard_chief_sector_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: RMCARGODashboardChiefSectorBundle:Default:index }

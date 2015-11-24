@@ -1,0 +1,73 @@
+Tbluser:
+    type: entity
+    table: TblUser
+    indexes:
+        IDX_5FED80ACA390C97B:
+            columns:
+                - FK_Sector_id
+        IDX_5FED80ACE5E4B93:
+            columns:
+                - FK_TypeProfil_id
+    id:
+        pkId:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            id: true
+            column: PK_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        firstname:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: FirstName
+        lastname:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: LastName
+        departement:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: Departement
+        userstartdate:
+            type: datetime
+            nullable: true
+            column: UserStartDate
+        userenddate:
+            type: datetime
+            nullable: true
+            column: UserEndDate
+        password:
+            type: text
+            nullable: true
+            length: -1
+            fixed: false
+            column: Password
+    manyToOne:
+        fkSector:
+            targetEntity: Tblsector
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                FK_Sector_id:
+                    referencedColumnName: PK_id
+            orphanRemoval: false
+        fkTypeprofil:
+            targetEntity: Tbltypeprofil
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                FK_TypeProfil_id:
+                    referencedColumnName: PK_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,29 @@
+<script type="text/javascript">
+	$(function() {
+		setInterval(function() {
+    		$('#errorReport').load(location.href+' #errorReport');
+  		}, 30000); //refresh every 30s
+	});
+</script>
+
+<div class="white-panel pn donut-chart">
+      <div class="white-header">
+			<h5>Error Panel Messages</h5>
+      </div>
+		<div class="row" id="errorReport" style ="margin:auto; margin-top:0px;">
+			<div class="col-sm-12 col-xs-12 boxContent"  style="overflow-y:scroll; height:240px; width:98%">
+				<table>
+    				<tr>
+    					<th> Flight </th><th> Event date </th><th> Error Msg </th>
+    					{% for error in error_tab %}
+        					<tr>
+        						<td id = {{ error.alert_color }} >{{ error.flight }}</td>
+        						<td id = {{ error.alert_color }} >{{ error.evtdate }}</td>
+        						<td id = {{ error.alert_color }} >{{ error.formatError }}</td>
+        					</tr>
+    					{% endfor %}
+    				</tr>
+				</table>
+			</div>
+	    </div>
+</div>

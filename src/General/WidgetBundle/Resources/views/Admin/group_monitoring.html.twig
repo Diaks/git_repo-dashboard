@@ -1,0 +1,47 @@
+<div class="col-sm-7 col-xs-7 boxContent">
+	<div class="white-panel pn donut-chart auto-scale">
+		<div class="white-header">
+			<h5>Groups</h5>
+      	</div>
+		<div class="row" id="robotStatus" style ="margin:auto; margin-top:0px;">
+			<table>
+				<tr>
+					<th> Label </th><th> Users </th><th> Action </th>
+					{% for group in type_array %}
+						<tr>
+							<td>{{ group.label }}</td>
+							<td>{{ group.nb_users }}</td>
+							<td>
+								<a class = "btn btnT1" href="{{ group.delete }}" onclick="return confirm('Delete {{ group.label }} ?')"> Delete </a>
+							</td>
+						</tr>
+					{% endfor %}
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+
+<div class="col-sm-5 col-xs-5 boxContent">
+	<div class="white-panel pn donut-chart" style ="margin-top:30px; height: 330px;">
+		<div class="white-header">
+			<h5>Add a Group</h5>
+      	</div>
+		<div class="row" id="addRobot" style ="margin:auto;">
+			<form id="form_full_page" class="FormAlign">
+				{{ form_label(form.TypeProfil) }}
+          		{{ form_errors(form.TypeProfil) }}
+          		{{ form_widget(form.TypeProfil) }}
+          		<br /><br />
+          		
+          		<div class="submit">
+						{{ form_widget(form.Add, { 'attr': {'class': 'btn btnT1'} }) }}
+				</div>
+				
+				{{ form_rest(form) }}
+			</form>
+		</div>
+	</div>
+</div>
+				
+			

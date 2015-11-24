@@ -1,0 +1,21 @@
+Tblsector:
+    type: entity
+    table: TblSector
+    id:
+        pkId:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            id: true
+            column: PK_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        sectorlabel:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: SectorLabel
+    lifecycleCallbacks: {  }

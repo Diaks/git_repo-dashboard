@@ -1,0 +1,50 @@
+Tbltracksinstruction:
+    type: entity
+    table: TblTracksInstruction
+    indexes:
+        IDX_36E3C6212E862701:
+            columns:
+                - FK_subsector_id
+        IDX_36E3C621FC3BD34F:
+            columns:
+                - FK_CCCActionComment
+    id:
+        pkId:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: PK_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        date:
+            type: datetime
+            nullable: true
+            column: Date
+        comment:
+            type: text
+            nullable: true
+            length: -1
+            fixed: false
+            column: Comment
+    manyToOne:
+        fkSubsector:
+            targetEntity: Tblcccactioncomment
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                FK_subsector_id:
+                    referencedColumnName: PK_id
+            orphanRemoval: false
+        fkCccactioncomment:
+            targetEntity: Tblcccactioncomment
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                FK_CCCActionComment:
+                    referencedColumnName: PK_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

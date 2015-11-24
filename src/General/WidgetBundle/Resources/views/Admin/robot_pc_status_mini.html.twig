@@ -1,0 +1,28 @@
+<script type="text/javascript">
+	$(function() {
+		setInterval(function() {
+    		$('#robotStatus').load(location.href+' #robotStatus');
+  		}, 30000);
+	});
+</script>
+
+<div class="white-panel pn donut-chart">
+      <div class="white-header">
+			<h5>Robot Pc Status</h5>
+      </div>
+		<div class="row" id="robotStatus" style ="margin:auto; margin-top:0px;">
+			<div class="col-sm-12 col-xs-12 boxContent"  style="overflow-y:scroll; height:190px; width:98%">
+				<table>
+    				<tr>
+    					<th> AFR </th><th> Last Time Alive </th>
+    					{% for robot_pc in robot_pc_status %}
+        					<tr id="{{ robot_pc.status }}">
+        						<td>{{ robot_pc.afr }}</td>
+        						<td>{{ robot_pc.last_time }}</td>
+        					</tr>
+    					{% endfor %}
+    				</tr>
+				</table>
+			</div>
+	    </div>
+</div>

@@ -1,0 +1,26 @@
+Tblfdvshc:
+    type: entity
+    table: tblFDVSHC
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: ID
+            generator:
+                strategy: IDENTITY
+    fields:
+        shc:
+            type: string
+            nullable: false
+            length: 3
+            fixed: false
+            column: SHC
+        priority:
+            type: decimal
+            nullable: false
+            precision: 2
+            scale: 1
+            column: Priority
+    lifecycleCallbacks: {  }

@@ -1,0 +1,100 @@
+<?php
+
+namespace DBORM\KLMBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Tblfptalert
+ *
+ * @ORM\Table(name="TblFPTAlert", indexes={@ORM\Index(name="IDX_87834F53B41EA3FFD3F072244D225600", columns={"FK_FlightNumber", "FK_FlightDate", "FK_Version"})})
+ * @ORM\Entity
+ */
+class Tblfptalert
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="PK_id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $pkId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="AlertOther", type="smallint", nullable=true)
+     */
+    private $alertother;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="AlertSensitive", type="smallint", nullable=true)
+     */
+    private $alertsensitive;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="AlertDSK", type="smallint", nullable=true)
+     */
+    private $alertdsk;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="AlertAVIH", type="smallint", nullable=true)
+     */
+    private $alertavih;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="AlertCHO", type="smallint", nullable=true)
+     */
+    private $alertcho;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="AlertECO", type="smallint", nullable=true)
+     */
+    private $alerteco;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="AlertOptiPlus", type="smallint", nullable=true)
+     */
+    private $alertoptiplus;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="AlertOptiPlusTransit", type="smallint", nullable=true)
+     */
+    private $alertoptiplustransit;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="AlertULD", type="smallint", nullable=true)
+     */
+    private $alertuld;
+
+    /**
+     * @var \Tblfptflights
+     *
+     * @ORM\ManyToOne(targetEntity="Tblfptflights")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="FK_FlightNumber", referencedColumnName="PK_FlightNumber"),
+     *   @ORM\JoinColumn(name="FK_FlightDate", referencedColumnName="PK_FlightDate"),
+     *   @ORM\JoinColumn(name="FK_Version", referencedColumnName="PK_Version")
+     * })
+     */
+    private $fkFlightnumber;
+
+
+}

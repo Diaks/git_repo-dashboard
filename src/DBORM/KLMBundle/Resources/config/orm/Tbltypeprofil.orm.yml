@@ -1,0 +1,20 @@
+Tbltypeprofil:
+    type: entity
+    table: TblTypeProfil
+    id:
+        pkId:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: PK_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        typeprofil:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: TypeProfil
+    lifecycleCallbacks: {  }

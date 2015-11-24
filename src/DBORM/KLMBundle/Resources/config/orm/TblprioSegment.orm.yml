@@ -1,0 +1,26 @@
+TblprioSegment:
+    type: entity
+    table: TblPrio_Segment
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: ID
+            generator:
+                strategy: IDENTITY
+    fields:
+        segment:
+            type: string
+            nullable: false
+            length: 3
+            fixed: false
+            column: Segment
+        priority:
+            type: float
+            nullable: false
+            precision: 53
+            scale: 0
+            column: Priority
+    lifecycleCallbacks: {  }

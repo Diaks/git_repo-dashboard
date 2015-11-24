@@ -1,0 +1,20 @@
+Tbltraksresultat:
+    type: entity
+    table: TblTraksResultat
+    id:
+        pkId:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: PK_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        resultatlabel:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            column: ResultatLabel
+    lifecycleCallbacks: {  }

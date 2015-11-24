@@ -1,0 +1,4 @@
+services:
+    rmcargo_dashboard_fa.example:
+        class: RMCARGO\DashboardFABundle\HomeController
+        arguments: [@doctrine.orm.entity_manager]

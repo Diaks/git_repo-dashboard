@@ -1,0 +1,43 @@
+dbormklm:
+    resource: "@DBORMKLMBundle/Resources/config/routing.yml"
+    prefix:   /
+
+rmccc_action_rmccc:
+    resource: "@RMCCCActionRMCCCBundle/Resources/config/routing.yml"
+    prefix:   /
+
+price_dashboard_price_admin:
+    resource: "@PriceDashboardAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
+general_widget:
+    resource: "@GeneralWidgetBundle/Resources/config/routing.yml"
+    prefix:   /
+
+dbormoldcsi:
+    resource: "@DBORMOLDCSIBundle/Resources/config/routing.yml"
+    prefix:   /
+
+dbormcsi:
+    resource: "@DBORMCSIBundle/Resources/config/routing.yml"
+    prefix:   /
+
+rmcargo_dashboard_rh:
+    resource: "@RMCARGODashboardRHBundle/Resources/config/routing.yml"
+    prefix:   /
+
+rmcargo_dashboard_chief_sector:
+    resource: "@RMCARGODashboardChiefSectorBundle/Resources/config/routing.yml"
+    prefix:   /
+
+general_login:
+    resource: "@GeneralLoginBundle/Resources/config/routing.yml"
+    #prefix:   /
+
+rmcargo_dashboard_admin:
+    resource: "@RMCARGODashboardAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
+rmcargo_dashboard_fa:
+    resource: "@RMCARGODashboardFABundle/Resources/config/routing.yml"
+    prefix:   /

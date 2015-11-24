@@ -1,0 +1,77 @@
+<div class="white-panel pn donut-chart" style ="margin-top:0px; height: 470px;">
+      <div class="white-header">
+			<h5>Traks Comment</h5>
+      </div>
+		<div class="row" id="traksEdit" style ="margin:auto;">
+			<div class="col-sm-12 col-xs-12 boxContent"  style="margin-top:15px; width:98%">
+  				
+				<form id="form_full_page" class="FormAlign">
+          		{{ form_errors(form.dataBaseAction) }}
+          		{{ form_widget(form.dataBaseAction) }}
+          		
+          		{{ form_errors(form.id) }}
+          		{{ form_widget(form.id) }}
+          		
+          		{{ form_errors(form.start) }}
+          		{{ form_widget(form.start) }}
+          		
+          		{{ form_errors(form.subSector) }}
+          		{{ form_widget(form.subSector) }}
+          		
+          		{{ form_errors(form.userName) }}
+          		{{ form_widget(form.userName) }}
+          		
+          		
+          		{{ form_label(form.AwbNumber) }}
+          		
+          		{{ form_errors(form.AwbPrefix) }}
+          		{{ form_widget(form.AwbPrefix) }}
+          		<a> / </a>
+          		{{ form_errors(form.AwbNumber) }}
+          		{{ form_widget(form.AwbNumber) }}
+          		
+          		<br />
+          		{{ form_label(form.Uld) }}
+          		{{ form_errors(form.Uld) }}
+          		{{ form_widget(form.Uld) }}
+          		<br />
+          		{{ form_label(form.Station) }}
+          		{{ form_errors(form.Station) }}
+          		{{ form_widget(form.Station) }}
+          		<br />
+          		{{ form_label(form.FlightPrefix) }}
+          		{{ form_errors(form.FlightPrefix) }}
+          		{{ form_widget(form.FlightPrefix) }}
+          		<br />
+          		{{ form_label(form.FlightNumber) }}
+          		{{ form_errors(form.FlightNumber) }}
+          		{{ form_widget(form.FlightNumber) }}
+          		<br />
+          		{{ form_label(form.FlightNumberSuffix) }}
+          		{{ form_errors(form.FlightNumberSuffix) }}
+          		{{ form_widget(form.FlightNumberSuffix) }}
+          		<br />
+          		{{ form_label(form.FlightDate) }}
+          		{{ form_errors(form.FlightDate) }}
+          		{{ form_widget(form.FlightDate, { 'id': 'datepicker'}) }}
+          		<br />
+          		{{ form_label(form.Action) }}
+          		{{ form_errors(form.Action) }}
+          		{{ form_widget(form.Action) }}
+          		<br /><br />
+          		{{ form_label(form.Comment) }}
+          		<br />
+          		{{ form_errors(form.Comment) }}
+          		{{ form_widget(form.Comment) }}
+          		<br />
+          		<div class="submit">
+						{{ form_widget(form.Save, { 'attr': {'class': 'btn btnT1'} }) }}
+				</div>
+				
+				{{ form_rest(form) }}
+				</form>
+          	
+			</div>
+	    </div>
+</div>
+

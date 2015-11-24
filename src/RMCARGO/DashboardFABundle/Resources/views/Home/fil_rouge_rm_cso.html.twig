@@ -1,0 +1,22 @@
+{% extends '::base.html.twig' %}
+{% block title %}Fil rouge RM/CSO{% endblock %}
+
+{% block body %}
+    <!-- {# % render controller('LiveGeekBundle:Default:onlineUsers') % #}-->
+    <div class="row">
+		<div class="col-lg-12 main-chart">
+			<h1>Fil rouge RM/CSO</h1>
+			<br />
+			
+			 <div class='row mt0 b1'>
+				<div class="col-md-12 col-sm-12 t1">
+					{{ include('GeneralWidgetBundle:FA:fil_rouge_rm_cso.html.twig') }}
+				</div>
+			</div>
+			
+			
+			
+		</div>
+	</div>
+	
+{% endblock %}

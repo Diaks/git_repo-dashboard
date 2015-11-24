@@ -1,0 +1,192 @@
+<?php
+
+namespace DBORM\KLMBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Tblflightschedule
+ *
+ * @ORM\Table(name="TblFlightSchedule", indexes={@ORM\Index(name="IDX_1EF1E41A1EFF39A", columns={"FK_AircraftType_id"}), @ORM\Index(name="IDX_1EF1E4121614BD8", columns={"FK_sector_id"})})
+ * @ORM\Entity
+ */
+class Tblflightschedule
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="FK_subSector_id", type="string", length=50, nullable=false)
+     */
+    private $fkSubsectorId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="PK_Flight", type="string", length=50, nullable=false)
+     */
+    private $pkFlight;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Origin", type="string", length=50, nullable=true)
+     */
+    private $origin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ESC", type="string", length=50, nullable=true)
+     */
+    private $esc;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="DOW", type="string", length=50, nullable=true)
+     */
+    private $dow;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Nb_jours", type="string", length=50, nullable=true)
+     */
+    private $nbJours;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ETD_Time", type="string", length=50, nullable=true)
+     */
+    private $etdTime;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="PMD", type="string", length=50, nullable=true)
+     */
+    private $pmd;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="PLD", type="string", length=50, nullable=true)
+     */
+    private $pld;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="AKE", type="string", length=50, nullable=true)
+     */
+    private $ake;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Period_DU", type="string", length=50, nullable=true)
+     */
+    private $periodDu;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Period_AU", type="string", length=50, nullable=true)
+     */
+    private $periodAu;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Commentaires", type="text", length=-1, nullable=true)
+     */
+    private $commentaires;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="FDV_Time", type="string", length=50, nullable=true)
+     */
+    private $fdvTime;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="MaxPayload", type="string", length=50, nullable=true)
+     */
+    private $maxpayload;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Vol_MD", type="string", length=50, nullable=true)
+     */
+    private $volMd;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Vol_LD", type="string", length=50, nullable=true)
+     */
+    private $volLd;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Wgt_LSE", type="string", length=50, nullable=true)
+     */
+    private $wgtLse;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Vol_LSE", type="string", length=50, nullable=true)
+     */
+    private $volLse;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="PLD_LSE", type="string", length=50, nullable=true)
+     */
+    private $pldLse;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="LEN20FT", type="string", length=50, nullable=true)
+     */
+    private $len20ft;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="PK_id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $pkId;
+
+    /**
+     * @var \Tblaircrafttype
+     *
+     * @ORM\ManyToOne(targetEntity="Tblaircrafttype")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="FK_AircraftType_id", referencedColumnName="PK_id")
+     * })
+     */
+    private $fkAircrafttype;
+
+    /**
+     * @var \Tblsector
+     *
+     * @ORM\ManyToOne(targetEntity="Tblsector")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="FK_sector_id", referencedColumnName="PK_id")
+     * })
+     */
+    private $fkSector;
+
+
+}

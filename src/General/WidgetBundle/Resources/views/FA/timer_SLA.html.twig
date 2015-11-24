@@ -1,0 +1,29 @@
+{# set SLA = render(controller('GeneralWidgetBundle:Widget:getTimer')) #}
+
+<script>
+	$(function() {
+		setInterval(function() {
+    		$('#Timer').load(location.href+' #Timer');
+  		}, 30000);
+	});
+</script>
+
+<div class="ui-accordion ui-widget ui-helper-reset accordion" role="tablist" style="text-align:center;">
+	<h5 class="white-header">Timer SLA</h5>
+	<div style="margin:auto;">
+		<div class="row" id="Timer" style =" margin:auto; margin-top:0px; width:98%;">
+		{% for timer in timers %}
+			<div class="col-sm-3 col-xs-3 boxContent" style ="text-align:center;">
+				<div class="white-header">
+					<h5>{{ timer.name }}</h5>
+    			</div>
+        		<div>
+					<br />
+					<p>{{ timer.timer }} </br>{{ timer.time }}</p>
+					<br />
+				</div>
+			</div>
+    	{% endfor %}
+	    </div>
+	</div>
+</div>

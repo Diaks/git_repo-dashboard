@@ -1,0 +1,88 @@
+Tblfptalert:
+    type: entity
+    table: TblFPTAlert
+    indexes:
+        IDX_87834F53B41EA3FFD3F072244D225600:
+            columns:
+                - FK_FlightNumber
+                - FK_FlightDate
+                - FK_Version
+    id:
+        pkId:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: PK_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        alertother:
+            type: smallint
+            nullable: true
+            unsigned: false
+            default: '0'
+            column: AlertOther
+        alertsensitive:
+            type: smallint
+            nullable: true
+            unsigned: false
+            default: '0'
+            column: AlertSensitive
+        alertdsk:
+            type: smallint
+            nullable: true
+            unsigned: false
+            default: '0'
+            column: AlertDSK
+        alertavih:
+            type: smallint
+            nullable: true
+            unsigned: false
+            default: '0'
+            column: AlertAVIH
+        alertcho:
+            type: smallint
+            nullable: true
+            unsigned: false
+            default: '0'
+            column: AlertCHO
+        alerteco:
+            type: smallint
+            nullable: true
+            unsigned: false
+            default: '0'
+            column: AlertECO
+        alertoptiplus:
+            type: smallint
+            nullable: true
+            unsigned: false
+            default: '0'
+            column: AlertOptiPlus
+        alertoptiplustransit:
+            type: smallint
+            nullable: true
+            unsigned: false
+            default: '0'
+            column: AlertOptiPlusTransit
+        alertuld:
+            type: smallint
+            nullable: true
+            unsigned: false
+            default: '0'
+            column: AlertULD
+    manyToOne:
+        fkFlightnumber:
+            targetEntity: Tblfptflights
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                FK_FlightNumber:
+                    referencedColumnName: PK_FlightNumber
+                FK_FlightDate:
+                    referencedColumnName: PK_FlightDate
+                FK_Version:
+                    referencedColumnName: PK_Version
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

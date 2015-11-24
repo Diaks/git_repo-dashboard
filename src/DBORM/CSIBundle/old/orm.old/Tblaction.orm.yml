@@ -1,0 +1,20 @@
+Tblaction:
+    type: entity
+    table: TblAction
+    id:
+        pkId:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: PK_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        actionlabel:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            column: ActionLabel
+    lifecycleCallbacks: {  }

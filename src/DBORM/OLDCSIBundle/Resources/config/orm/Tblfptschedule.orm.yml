@@ -1,0 +1,154 @@
+Tblfptschedule:
+    type: entity
+    table: tblFPTSchedule
+    id: {  }
+    fields:
+        sector:
+            type: string
+            nullable: true
+            length: 15
+            fixed: false
+            column: Sector
+        subsector:
+            type: string
+            nullable: true
+            length: 15
+            fixed: false
+            column: Subsector
+        flight:
+            type: string
+            nullable: true
+            length: 15
+            fixed: false
+            column: Flight
+        origin:
+            type: string
+            nullable: true
+            length: 15
+            fixed: false
+            column: Origin
+        routing:
+            type: string
+            nullable: true
+            length: 15
+            fixed: false
+            column: Routing
+        typeavion:
+            type: string
+            nullable: true
+            length: 15
+            fixed: false
+            column: TypeAvion
+        dow:
+            type: string
+            nullable: true
+            length: 15
+            fixed: false
+            column: DOW
+        nbj:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: NbJ
+        etd:
+            type: string
+            nullable: true
+            length: 15
+            fixed: false
+            column: ETD
+        pmd:
+            type: string
+            nullable: true
+            length: 15
+            fixed: false
+            column: PMD
+        pld:
+            type: string
+            nullable: true
+            length: 15
+            fixed: false
+            column: PLD
+        ake:
+            type: string
+            nullable: true
+            length: 15
+            fixed: false
+            column: AKE
+        debPeriode:
+            type: string
+            nullable: true
+            length: 15
+            fixed: false
+            column: deb_periode
+        finPeriode:
+            type: string
+            nullable: true
+            length: 15
+            fixed: false
+            column: fin_periode
+        instructions:
+            type: string
+            nullable: true
+            length: 2000
+            fixed: false
+            column: Instructions
+        fdvtime:
+            type: string
+            nullable: true
+            length: 15
+            fixed: false
+        maxpayload:
+            type: string
+            nullable: true
+            length: 15
+            fixed: false
+            column: MaxPayload
+        volmd:
+            type: string
+            nullable: true
+            length: 15
+            fixed: false
+            column: VolMD
+        volld:
+            type: string
+            nullable: true
+            length: 15
+            fixed: false
+            column: VolLD
+        mailSubsector:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: Mail_Subsector
+        mailAssistant:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: Mail_Assistant
+        wgtLse:
+            type: string
+            nullable: true
+            length: 15
+            fixed: false
+            column: WGT_LSE
+        volLse:
+            type: string
+            nullable: true
+            length: 15
+            fixed: false
+            column: VOL_LSE
+        pldLse:
+            type: string
+            nullable: true
+            length: 15
+            fixed: false
+            column: PLD_LSE
+        len20ft:
+            type: string
+            nullable: true
+            length: 15
+            fixed: false
+            column: LEN_20FT
+    lifecycleCallbacks: {  }

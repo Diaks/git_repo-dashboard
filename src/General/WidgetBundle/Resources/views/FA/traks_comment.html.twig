@@ -1,0 +1,55 @@
+{# Calls:   #}
+
+{% if instructions == true %}
+<script type="text/javascript">
+	$(function() {
+		setInterval(function() {
+    		$('#instructions').load(location.href+' #instructions');
+  		}, 60000);
+	});
+</script>
+<div class="white-panel pn donut-chart tracks-inst">
+      <div class="white-header">
+			<h5>Traks instructions</h5>
+      </div>
+      
+		<div class="row" id="instructions" style ="margin:auto; margin-top:0px;">
+			<div class="col-sm-12 col-xs-12 boxContent"  style="overflow-y:scroll; height:230px; width:98%">
+				<table>
+    				<tr>
+    					<th> User </th>
+    					<th> Awb </th>
+    					<th> Uld </th>
+    					<th> Station </th>
+    					<th> Flight </th>
+    					<th> Flight date </th>
+    					<th> Action </th>
+    					<th> Comment </th>
+    					{% if edit == true %}
+							<th> Edit </th>
+						{% endif %}
+						
+    					{% for instruction in instructions %}
+        					<tr>
+        						<td>{{ instruction.user_name }}</td>
+        						<td>{{ instruction.awb }}</td>
+        						<td>{{ instruction.uld }}</td>
+        						<td>{{ instruction.station }}</td>
+        						<td>{{ instruction.flight }}</td>
+        						<td>{{ instruction.flight_date }}</td>
+        						<td>{{ instruction.action }}</td>
+        						<td>{{ instruction.comment }}</td>
+        						{% if edit == true %}
+									<td><a class = "btn btnT1" href="{{ instruction.edit }}"> Edit </a>
+										<a class = "btn btnT1" href="{{ instruction.delete }}"> Delete </a>
+									</td>
+								{% endif %}
+        					</tr>
+    					{% endfor %}
+    					
+    				</tr>
+				</table>
+			</div>
+	    </div>
+</div>
+{% endif %}

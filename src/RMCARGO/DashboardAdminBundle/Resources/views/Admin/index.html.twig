@@ -1,0 +1,54 @@
+{% extends '::base.html.twig' %}
+{% block title %}
+	{% if app.session.get('type_profil') == '2' %}
+		Admin home page
+	{% elseif  app.session.get('type_profil') == '11' %}
+	    EDC home page
+	{% endif %}
+{% endblock %}
+
+{% block body %}
+    <!-- {# % render controller('LiveGeekBundle:Default:onlineUsers') % #}-->
+    <div class="row">
+		<div class="col-lg-12 main-chart">
+			
+			
+			
+			{% if app.session.get('type_profil') == '2' %}
+				<h1>Admin Dashboard</h1>
+			{% elseif  app.session.get('type_profil') == '11' %}
+			   <h1>EDC Dashboard</h1>
+			{% endif %}
+			
+			
+			
+			
+			
+			<div class="row mtbox">
+				<div class="col-md-4 col-sm-4">
+                  	{{ include('GeneralWidgetBundle:User:user_info.html.twig') }}
+                </div>
+				<div class="col-md-4 col-sm-4">
+                  	{{ include('GeneralWidgetBundle:Admin:day_data_status.html.twig') }}
+                </div>
+				<div class="col-md-4 col-sm-4">
+                  	{{ include('GeneralWidgetBundle:Admin:robot_pc_status_mini.html.twig') }}
+                </div>
+			</div>
+			
+			<div class='row mt'>
+				<div class="col-md-12 col-sm-12">
+					{{ include('GeneralWidgetBundle:Admin:data_inbond_histo_day.html.twig ') }}
+				</div>
+			</div>
+			
+			<div class="row mt">
+				<div class="col-md-12 col-sm-12 t1">
+                  	{{ include('GeneralWidgetBundle:Admin:error_panel_report.html.twig') }}
+                </div>
+			</div>
+			
+		</div>
+	</div>
+	
+{% endblock %}

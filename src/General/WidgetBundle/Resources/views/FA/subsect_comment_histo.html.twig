@@ -1,0 +1,35 @@
+{# Calls:   #}
+
+<script type="text/javascript">
+	$(function() {
+		setInterval(function() {
+    		$('#comment_histo').load(location.href+' #comment_histo');
+  		}, 60000);
+	});
+</script>
+<div class="white-panel pn donut-chart comment_histo">
+      <div class="white-header">
+			<h5>Comment History</h5>
+      </div>
+      
+		<div class="row" id="comment_histo" style ="margin:auto; margin-top:0px;">
+			<div class="col-sm-12 col-xs-12 boxContent"  style="overflow-y:scroll; height:380px; width:98%">
+				<table>
+    				<tr>
+    					<th> User </th>
+    					<th> Date </th>
+    					<th> Comment </th>
+						
+    					{% for comment in comments %}
+        					<tr>
+        						<td>{{ comment.FK_User_id }}</td>
+        						<td>{{ comment.Date }}</td>
+        						<td>{{ comment.Comment | raw }}</td>
+        					</tr>
+    					{% endfor %}
+    					
+    				</tr>
+				</table>
+			</div>
+	    </div>
+</div>

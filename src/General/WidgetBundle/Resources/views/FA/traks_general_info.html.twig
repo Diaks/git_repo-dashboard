@@ -1,0 +1,51 @@
+{# Calls:  #}
+{% if gen_instructions == true %}
+<script type="text/javascript">
+	$(function() {
+		setInterval(function() {
+    		$('#general_inst').load(location.href+' #general_inst');
+  		}, 60000);
+	});
+</script>
+<div class="white-panel pn donut-chart traks-gen">
+      <div class="white-header">
+			<h5>Traks General Info</h5>
+      </div>
+		<div class="row" id="general_gen" style ="margin:auto; margin-top:0px;">
+			<div class="col-sm-12 col-xs-12 boxContent"  style="overflow-y:scroll; height:230px; width:98%">
+				<table>
+    				<tr>
+    					<th> User </th>
+    					<th> Awb </th>
+    					<th> Uld </th>
+    					<th> Station </th>
+    					<th> Flight </th>
+    					<th> Flight date </th>
+    					<th> Action </th>
+    					<th> Comment </th>
+    					{% if edit == true %}
+							<th> Edit </th>
+						{% endif %}
+    					{% for gen_instruction in gen_instructions %}
+        					<tr>
+        						<td>{{ gen_instruction.user_name }}</td>
+        						<td>{{ gen_instruction.awb }}</td>
+        						<td>{{ gen_instruction.uld }}</td>
+        						<td>{{ gen_instruction.station }}</td>
+        						<td>{{ gen_instruction.flight }}</td>
+        						<td>{{ gen_instruction.flight_date }}</td>
+        						<td>{{ gen_instruction.action }}</td>
+        						<td>{{ gen_instruction.comment }}</td>
+        						{% if edit == true %}
+									<td><a class = "btn btnT1" href="{{ gen_instruction.edit }}"> Edit </a>
+										<a class = "btn btnT1" href="{{ gen_instruction.delete }}"> Delete </a>
+									</td>
+								{% endif %}
+        					</tr>
+    					{% endfor %}
+    				</tr>
+				</table>
+			</div>
+	    </div>
+</div>
+{% endif %}

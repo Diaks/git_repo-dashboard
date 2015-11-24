@@ -1,0 +1,21 @@
+Tbldayofweek:
+    type: entity
+    table: TblDayOfWeek
+    id:
+        pkId:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            id: true
+            column: PK_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        dayLbl:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: Day_Lbl
+    lifecycleCallbacks: {  }

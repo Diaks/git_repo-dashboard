@@ -1,0 +1,46 @@
+<?php
+
+namespace DBORM\KLMBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Tblphoneefficiency
+ *
+ * @ORM\Table(name="TblPhoneEfficiency")
+ * @ORM\Entity
+ */
+class Tblphoneefficiency
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="PK_id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $pkId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Date", type="string", length=50, nullable=true)
+     */
+    private $date;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Efficency", type="string", length=50, nullable=true)
+     */
+    private $efficency;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Nb_Calls", type="string", length=50, nullable=true)
+     */
+    private $nbCalls;
+
+
+}

@@ -1,0 +1,72 @@
+<div class="white-panel pn donut-chart">
+      <div class="white-header">
+			<h5>Users</h5>
+      </div>
+		<div class="row" id="robotStatus" style ="margin:auto; margin-top:0px;">
+			<div class="col-sm-12 col-xs-12 boxContent"  style="overflow-y:scroll; height: 345px; width:98%">
+			
+				<table>
+    				<tr>
+    					<th> Matricule </th><th> FirstName </th><th> LastName </th><th> Departement </th><th> User Start Date</th><th> Sector </th><th> Type Profil </th><th> Action </th>
+    					{% for user in user_array %}
+        					<tr>
+        						<td>{{ user.Matricule }}</td>
+        						<td>{{ user.FirstName }}</td>
+        						<td>{{ user.LastName }}</td>
+        						<td>{{ user.Departement }}</td>
+        						<td>{{ user.UserStartDate }}</td>
+        						<td>{{ user.FK_Sector_id }}</td>
+        						<td>{{ user.FK_TypeProfil_id }}</td>
+        						<td>
+        							<a class = "btn btnT1" href="{{ user.delete }}" onclick="return confirm('Delete {{ user.Matricule }} ?')"> Delete </a>
+        							<a class = "btn btnT1" href="{{ user.edit }}"> Edit </a>
+        						</td>
+        					</tr>
+    					{% endfor %}
+    				</tr>
+				</table>
+				
+			</div>
+	    </div>
+</div>
+
+<div class="white-panel pn donut-chart" style ="margin-top:30px; height: 330px;">
+      <div class="white-header">
+			<h5>Add a User</h5>
+      </div>
+		<div class="row" id="addRobot" style ="margin:auto;">
+			<div class="col-sm-12 col-xs-12 boxContent"  style="margin-top:30px; width:98%">
+			
+				<form id="form_full_page" class="FormAlign">
+				{{ form_label(form.Matricule) }}
+          		{{ form_errors(form.Matricule) }}
+          		{{ form_widget(form.Matricule) }}
+          		<br />
+          		{{ form_label(form.FirstName) }}
+          		{{ form_errors(form.FirstName) }}
+          		{{ form_widget(form.FirstName) }}
+          		<br />
+          		{{ form_label(form.LastName) }}
+          		{{ form_errors(form.LastName) }}
+          		{{ form_widget(form.LastName) }}
+          		<br />
+          		{{ form_label(form.Password) }}
+          		{{ form_errors(form.Password) }}
+          		{{ form_widget(form.Password) }}
+          		<br />
+          		{{ form_label(form.TypeProfil) }}
+          		{{ form_errors(form.TypeProfil) }}
+          		{{ form_widget(form.TypeProfil) }}
+          		<br /><br />
+          		<div class="submit">
+						{{ form_widget(form.Register, { 'attr': {'class': 'btn btnT1'} }) }}
+				</div>
+				
+				{{ form_rest(form) }}
+				</form>
+          	
+			</div>
+	    </div>
+</div>
+				
+			

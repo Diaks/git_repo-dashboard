@@ -1,0 +1,35 @@
+<!-- **********************************************************************************************************************************************************
+MAIN SIDEBAR MENU
+*********************************************************************************************************************************************************** -->
+<!--sidebar start-->
+<aside>
+<div id="sidebar"  class="nav-collapse ">
+<!-- sidebar menu start-->
+<ul class="sidebar-menu" id="nav-accordion">
+
+<!-- <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+		<h5 class="centered">Marcel Newman</h5> -->
+
+	<li class="mt">
+		<a class="active" href="{{ path('rmcargo_dashboard_admin_homepage') }}">
+			<i class="fa fa-dashboard"></i>
+			<span>Home page</span>
+		</a>
+	</li>
+	
+	<li class="sub-menu mt">
+		<a href="javascript:;" >
+			<i class="fa fa-desktop"></i>
+			<span>Data Management</span>
+		</a>
+		<ul class="sub">
+			<li><a href="{{ path('rmcargo_dashboard_admin_data_details') }}">Data details</a></li>
+			<li><a href="{{ path('rmcargo_dashboard_admin_purge_monitoring') }}">Clean</a></li>
+		</ul>
+	</li>
+	
+</ul>
+<!-- sidebar menu end-->
+</div>
+</aside>
+																		<!--sidebar end-->

@@ -1,0 +1,74 @@
+{% extends '::base.html.twig' %}
+{% block title %}Flight analyst home page{% endblock %}
+
+{% block body %}
+    <!-- {# % render controller('LiveGeekBundle:Default:onlineUsers') % #}-->
+    <div class="row">
+		<div class="col-lg-12 main-chart">
+			<h1>Flight analyst Dashboard</h1>
+			<br />
+			
+			<div class='row mt2' style="margin-bottom: -10px">
+				<div class="col-md-4 col-sm-4">
+                  	{{ include('GeneralWidgetBundle:User:user_info.html.twig') }}
+                </div>
+				<div class="col-md-8 col-sm-8 t2">
+					{{ include('GeneralWidgetBundle:FA:subsect_comment.html.twig') }}
+				</div>
+			</div>
+			
+			<div class='row mt b1'>
+				<div class="col-md-12 col-sm-12 t1">
+					{{ include('GeneralWidgetBundle:FA:traks_general_info.html.twig') }}
+				</div>
+			</div>
+			
+			<div class='row mt b1'>
+				<div class="col-md-12 col-sm-12">
+					{{ include('GeneralWidgetBundle:FA:timer_SLA.html.twig') }}
+				</div>
+			</div>
+			
+			<div class="row mtbox b1">
+				<div class="col-md-3 col-sm-3 t1">
+                  	{{ include('GeneralWidgetBundle:FA:day_handoverToDo.html.twig') }}
+                </div>
+				<div class="col-md-3 col-sm-3 t1">
+                  	{{ include('GeneralWidgetBundle:FA:day_ToDoPublished.html.twig') }}
+                </div>
+				<div class="col-md-3 col-sm-3 t1">
+                  	{{ include('GeneralWidgetBundle:FA:day_ToDoError.html.twig') }}
+                </div>
+                <div class="col-md-3 col-sm-3 t1">
+                  	{{ include('GeneralWidgetBundle:FA:day_handoverDone.html.twig') }}
+                </div>
+			</div>
+			
+			{# <div class="row mt b1">
+				<div class="col-md-6 col-sm-6 t1">
+                  	{{ include('GeneralWidgetBundle:User:empty_module.html.twig') }}
+                </div>
+                <div class="col-md-6 col-sm-6 t1">
+                  	{{ include('GeneralWidgetBundle:User:empty_module.html.twig') }}
+                </div>
+			</div>
+			
+			<div class="row mt b1">
+				<div class="col-md-6 col-sm-6 t1">
+                  	{{ include('GeneralWidgetBundle:User:empty_module.html.twig') }}
+                </div>
+                <div class="col-md-6 col-sm-6 t1">
+                  	{{ include('GeneralWidgetBundle:User:empty_module.html.twig') }}
+                </div>
+			</div> #}
+			
+			<div class='row mt b1'>
+				<div class="col-md-12 col-sm-12 t1">
+					{{ include('GeneralWidgetBundle:FA:traks_comment.html.twig') }}
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	
+{% endblock %}

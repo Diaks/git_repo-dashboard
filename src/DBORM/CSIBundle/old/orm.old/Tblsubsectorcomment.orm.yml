@@ -1,0 +1,50 @@
+Tblsubsectorcomment:
+    type: entity
+    table: TblSubSectorComment
+    indexes:
+        IDX_491E257C2E862701:
+            columns:
+                - FK_subsector_id
+        IDX_491E257C55505656:
+            columns:
+                - FK_User_id
+    id:
+        pkId:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: PK_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        date:
+            type: datetime
+            nullable: true
+            column: Date
+        comment:
+            type: string
+            nullable: true
+            length: 0
+            fixed: false
+            column: Comment
+    manyToOne:
+        fkSubsector:
+            targetEntity: Tblsubsector
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                FK_subsector_id:
+                    referencedColumnName: PK_SubSector_code
+            orphanRemoval: false
+        fkUser:
+            targetEntity: Tbluser
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                FK_User_id:
+                    referencedColumnName: PK_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

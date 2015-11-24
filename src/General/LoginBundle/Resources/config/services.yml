@@ -1,0 +1,4 @@
+services:
+    LoginController.indexAction:
+        class: General\LoginBundle\LoginController
+        arguments: ["@doctrine.orm.entity_manager"]

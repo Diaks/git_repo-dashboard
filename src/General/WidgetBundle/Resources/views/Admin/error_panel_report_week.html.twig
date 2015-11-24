@@ -1,0 +1,30 @@
+{# Calls: RMCARGODashboardAdminBundle:Admin:getNbStatus #}
+{# Params: status (refers to the name of the status in ActiveStatus, eg: 'Requested') #}
+
+
+{% for day in histo_day_tab_error_msg %}
+<div class='row'>
+	<div class="col-md-12 col-sm-12">
+	
+		<div class="ui-accordion ui-widget ui-helper-reset accordion_close" role="tablist" style ="margin-top:10px;">
+				<h5 class="white-header">{{ day.date }}</h5>
+			<div class="row" id="errorReport" style ="margin:auto; margin-top:0px";>
+				<div class="col-sm-12 col-xs-12 boxContent">
+					<table>
+    					<tr>
+    						<th> Flight </th><th> Event date </th><th> Error Msg </th>
+    						{% for error in day.errors %}
+        						<tr>
+        							<td id = {{ error.alert_color }} >{{ error.flight }}</td>
+        							<td id = {{ error.alert_color }} >{{ error.evtdate }}</td>
+        							<td id = {{ error.alert_color }} >{{ error.formatError }}</td>
+        						</tr>
+    						{% endfor %}
+    					</tr>
+					</table>
+				</div>
+	   		</div>
+		</div>
+	</div>
+</div>
+{% endfor %}

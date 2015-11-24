@@ -1,0 +1,61 @@
+Tblfptactivestatus:
+    type: entity
+    table: TblFPTActiveStatus
+    indexes:
+        IDX_D453B727B41EA3FFD3F072244D225600:
+            columns:
+                - FK_FlightNumber
+                - FK_FlightDate
+                - FK_Version
+        IDX_D453B72716F201A1:
+            columns:
+                - FK_Status_id
+    id:
+        pkId:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: PK_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        comment:
+            type: text
+            nullable: true
+            length: -1
+            fixed: false
+            column: Comment
+        alreadytried:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: AlreadyTried
+        starttimeevt:
+            type: datetime
+            nullable: true
+            column: StartTimeEvt
+    manyToOne:
+        fkFlightnumber:
+            targetEntity: Tblfptflights
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                FK_FlightNumber:
+                    referencedColumnName: PK_FlightNumber
+                FK_FlightDate:
+                    referencedColumnName: PK_FlightDate
+                FK_Version:
+                    referencedColumnName: PK_Version
+            orphanRemoval: false
+        fkStatus:
+            targetEntity: Tblfptstatus
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                FK_Status_id:
+                    referencedColumnName: PK_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

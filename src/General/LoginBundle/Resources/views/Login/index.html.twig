@@ -1,0 +1,51 @@
+{% extends '::base.html.twig' %}
+{% block title %}Login{% endblock %}
+{% block body %}
+
+<style>
+#main-content{
+	margin-left:0px;
+}
+
+#content, #container{
+	padding:1px;
+	background-color:transparent;
+}
+
+body{
+	background-color:#424a5d !important;
+}
+.boxContentLogin{
+	background-color:#e5eaf9;
+}
+</style>
+
+<div class="row" id="login-font">
+   <div class="col-sm-6 col-xs-8 boxContentLogin" style="float:none; margin:auto; margin-top: 10.5vh; padding-top:15px; padding-bottom:15px;text-align:center">
+        
+        {% if erreurIdentifiant == true %}
+        	<div class="alert alert-danger" role="alert">Your login is incorrect</div>
+        {% endif %} 
+        
+        <div class="col-sm-8 col-xs-8 boxLogin" style="float:none; margin:auto;">
+        	<form id="LoginIndexForm" class="FormAlign">
+				{{ form_label(form.Matricule) }}
+          		{{ form_errors(form.Matricule) }}
+          		{{ form_widget(form.Matricule) }}
+          		
+          		{{ form_label(form.Password) }}
+          		{{ form_errors(form.Password) }}
+          		{{ form_widget(form.Password) }}
+          		
+          		<div class="submit">
+						{{ form_widget(form.Login, { 'attr': {'class': 'btn btnT1'} }) }}
+				</div>
+				
+				{{ form_rest(form) }}
+				
+          	</form>
+		</div>
+	</div> 
+</div><!-- /.row -->
+{% endblock %}
+	

@@ -1,0 +1,112 @@
+<?php
+
+namespace DBORM\KLMBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Tblfptflights
+ *
+ * @ORM\Table(name="TblFPTFlights", indexes={@ORM\Index(name="IDX_C6DF75A855505656", columns={"FK_User_id"}), @ORM\Index(name="IDX_C6DF75A8A1EFF39A", columns={"FK_AircraftType_id"})})
+ * @ORM\Entity
+ */
+class Tblfptflights
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="PK_FlightNumber", type="string", length=50, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    private $pkFlightnumber;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="PK_FlightDate", type="string", length=50, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    private $pkFlightdate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="PK_Version", type="string", length=50, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    private $pkVersion;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="EDT", type="string", length=10, nullable=true)
+     */
+    private $edt;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="DateCreation", type="datetime", nullable=true)
+     */
+    private $datecreation;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="DatedFlightInstruction", type="text", length=-1, nullable=true)
+     */
+    private $datedflightinstruction;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="Finalisation", type="smallint", nullable=true)
+     */
+    private $finalisation;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="Prepointage", type="smallint", nullable=true)
+     */
+    private $prepointage;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="Inratable", type="smallint", nullable=true)
+     */
+    private $inratable;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="Ponctualite", type="smallint", nullable=true)
+     */
+    private $ponctualite;
+
+    /**
+     * @var \Tbluser
+     *
+     * @ORM\ManyToOne(targetEntity="Tbluser")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="FK_User_id", referencedColumnName="PK_id")
+     * })
+     */
+    private $fkUser;
+
+    /**
+     * @var \Tblaircrafttype
+     *
+     * @ORM\ManyToOne(targetEntity="Tblaircrafttype")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="FK_AircraftType_id", referencedColumnName="PK_id")
+     * })
+     */
+    private $fkAircrafttype;
+
+
+}

@@ -1,0 +1,33 @@
+{# Params: db_array (refers to General:WidgetBundle:Controller:getDBSize)  + add clean link to array#}
+{# Create clean link from: General:WidgetBundle:Controller:clearDBCacheAction:indexAction #}
+{# eg: Price:DashboardAdminBundle:Controller: #}
+
+<div class="white-panel pn donut-chart" style ="margin-top:30px; height: 100%;">
+      <div class="white-header">
+			<h5>Clean Database Cache</h5>
+      </div>
+		<div class="row" id="addRobot" style ="margin:auto;">
+			<div class="col-sm-12 col-xs-12 boxContent"  style="margin-top:30px; width:98%">
+				
+          		<table>
+    				<tr>
+    					<th> Name </th><th> Logical Name </th><th> Physical Name </th><th> Size in Mb </th><th> Clean </th>
+    					{% for db in db_array %}
+        					<tr id="">
+        						<td>{{ db.DatabaseName|raw }}</td>
+        						<td>{{ db.Logical_Name|raw }}</td>
+        						<td>{{ db.Physical_Name|raw }}</td>
+        						<td>{{ db.SizeMB|raw }}</td>
+        						{% if db.clean %}
+        						<td><a class = "btn btnT1" href="{{ db.clean }}" onclick="return confirm('Clean {{ db.Logical_Name }} ?')"> Clean </a></td>
+        						{% else %}
+        						<td></td>
+        						{% endif %}
+        					</tr>
+    					{% endfor %}
+    				</tr>
+				</table>
+          	
+			</div>
+	    </div>
+</div>

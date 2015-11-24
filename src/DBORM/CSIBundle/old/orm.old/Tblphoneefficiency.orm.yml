@@ -1,0 +1,32 @@
+Tblphoneefficiency:
+    type: entity
+    table: TblPhoneEfficiency
+    id:
+        pkId:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: PK_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        date:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: Date
+        efficency:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: Efficency
+        nbCalls:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: Nb_Calls
+    lifecycleCallbacks: {  }

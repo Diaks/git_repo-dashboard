@@ -1,0 +1,61 @@
+<script type="text/javascript">
+	$(function() {
+		setInterval(function() {
+    		$('#robotStatus').load(location.href+' #robotStatus');
+  		}, 60000);
+	});
+</script>
+
+<div class="white-panel pn donut-chart">
+      <div class="white-header">
+			<h5>Robot Pc Status</h5>
+      </div>
+		<div class="row" id="robotStatus" style ="margin:auto; margin-top:0px;">
+			<div class="col-sm-12 col-xs-12 boxContent"  style="overflow-y:scroll; height: 345px; width:98%">
+			
+				<table>
+    				<tr>
+    					<th> AFR </th><th> TID </th><th> Last Time Alive </th><th> Delete </th>
+    					{% for robot_pc in robot_pc_status %}
+        					<tr id="{{ robot_pc.status }}">
+        						<td>{{ robot_pc.afr }}</td>
+        						<td>{{ robot_pc.tid }}</td>
+        						<td>{{ robot_pc.last_time }}</td>
+        						<td><a class = "btn btnT1" href="{{ robot_pc.link }}" onclick="return confirm('Delete {{ robot_pc.afr }} ?')"> Delete </a></td>
+        					</tr>
+    					{% endfor %}
+    				</tr>
+				</table>
+				
+			</div>
+	    </div>
+</div>
+
+<div class="white-panel pn donut-chart" style ="margin-top:30px; height: 200px;">
+      <div class="white-header">
+			<h5>Add a Robot PC</h5>
+      </div>
+		<div class="row" id="addRobot" style ="margin:auto;">
+			<div class="col-sm-12 col-xs-12 boxContent"  style="margin-top:30px; width:98%">
+			
+				<form id="form_full_page" class="FormAlign">
+				{{ form_label(form.AFR) }}
+          		{{ form_errors(form.AFR) }}
+          		{{ form_widget(form.AFR) }}
+          		
+          		{{ form_label(form.tid) }}
+          		{{ form_errors(form.tid) }}
+          		{{ form_widget(form.tid) }}
+          		
+          		<div class="submit">
+						{{ form_widget(form.Add, { 'attr': {'class': 'btn btnT1'} }) }}
+				</div>
+				
+				{{ form_rest(form) }}
+				</form>
+          	
+			</div>
+	    </div>
+</div>
+				
+			

@@ -1,0 +1,13 @@
+services:
+#    general_widget.example:
+#        class: General\WidgetBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
+
+     call_AdminController:
+         class: RMCARGO\DashboardAdminBundle\Controller\AdminController
+          
+     call_WidgetController:
+         class: Price\DashboardAdminBundle\Controller\AdminController
+         calls:
+            - [setContainer, ["@service_container"]]
+         arguments: [@service_container] 

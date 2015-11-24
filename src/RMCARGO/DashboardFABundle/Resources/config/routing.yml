@@ -1,0 +1,24 @@
+rmcargo_dashboard_fa_homepage:
+    path:     /FA_Dashboard
+    defaults: { _controller: "RMCARGODashboardFABundle:Home:index" }
+    
+rmcargo_dashboard_fa_traks:
+    path:     /FA_Traks
+    defaults: { _controller: "RMCARGODashboardFABundle:Home:tracks" }
+    
+rmcargo_dashboard_fa_traks_edit:
+    path:     /FA_Traks_Edit/{dataBaseAction}-{id}-{start}-{subSector}-{userName}-{AWBPrefix}-{AWBNumber}-{ULD}-{station}-{flightPrefix}-{flightNumber}-{flightNumberSuffix}-{flightDate}-{action}-{comment}
+    defaults: { _controller: "RMCARGODashboardFABundle:Home:tracksEdit" }
+    requirements:
+      subSector: '[^/]+.+'
+      flightDate: '[a-zA-Z0-9_\/\s.]+'
+      start: '[a-zA-Z0-9_\/\s.]+'
+      comment: '[^/]+.+'
+    
+rmcargo_dashboard_fa_comment_page:
+    path:     /FA_Comment_Page
+    defaults: { _controller: "RMCARGODashboardFABundle:Home:commentPage" }
+    
+rmcargo_dashboard_fil_rouge_rm_cso:
+    path:     /FA_Fil_Rouge_RM_CSO
+    defaults: { _controller: "RMCARGODashboardFABundle:Home:filRougeRMCSO" }

@@ -1,0 +1,21 @@
+Tblcity:
+    type: entity
+    table: TblCity
+    id:
+        pkCityCode:
+            type: string
+            nullable: false
+            length: 5
+            fixed: false
+            id: true
+            column: PK_City_code
+            generator:
+                strategy: IDENTITY
+    fields:
+        city:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: City
+    lifecycleCallbacks: {  }

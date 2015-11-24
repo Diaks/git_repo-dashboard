@@ -1,0 +1,38 @@
+{# Params: histo_day_tab_success (refers to DBORM:CSIBundle:Entity:Tblfptactivestatus:getSuccesHistoHours)  #}
+
+<script type="text/javascript">
+	$(function() {
+		setInterval(function() {
+    		$('#data_inbond_day').load(location.href+' #data_inbond_day')
+  		}, 300000); //every 5min
+	});
+</script>
+
+<div class="white-panel pn">
+	<div class="white-header">
+		<h5>Data Inbound (24 hours)</h5>
+	</div>
+    <div class="custom-bar-chart" id="data_inbond_day">
+        <ul class="y-axis">
+        	<li><span>150</span></li>
+        	<li><span>120</span></li>
+        	<li><span>90</span></li>
+        	<li><span>60</span></li>
+        	<li><span>30</span></li>
+        	<li><span>0</span></li>
+        </ul>
+        	{% set i = 1 %}
+        	{% for hour in histo_day_tab_success %}
+				<div class="bar2">
+					<div class="title">{{ hour.hour }}</div>
+					<div class="succes_bar" data-original-title = "{{ hour.nb_vols }}"
+                 		 data-toggle="tooltip" data-placement="top" style="height:{{ hour.percent }}%"></div>
+                 	<div class="fail_bar" data-original-title = "{{ histo_day_tab_error[i].nb_vols }}"
+                 	 	data-toggle="tooltip" data-placement="top" style="height:{{ histo_day_tab_error[i].percent }}%"></div>
+                 	<div class="error_bar" data-original-title = "{{ histo_day_tab_crit_error[i].nb_vols }}"
+                 	 	data-toggle="tooltip" data-placement="top" style="height:{{ histo_day_tab_crit_error[i].percent }}%"></div>		
+        		</div>
+        		{% set i = i+1 %}
+        	{% endfor %}
+	</div>
+</div>

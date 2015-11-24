@@ -1,0 +1,166 @@
+Tblflightschedule:
+    type: entity
+    table: TblFlightSchedule
+    indexes:
+        IDX_1EF1E41A1EFF39A:
+            columns:
+                - FK_AircraftType_id
+        IDX_1EF1E4121614BD8:
+            columns:
+                - FK_sector_id
+    id:
+        pkId:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: PK_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        fkSubsectorId:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            column: FK_subSector_id
+        pkFlight:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            column: PK_Flight
+        origin:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: Origin
+        esc:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: ESC
+        dow:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: DOW
+        nbJours:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: Nb_jours
+        etdTime:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: ETD_Time
+        pmd:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: PMD
+        pld:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: PLD
+        ake:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: AKE
+        periodDu:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: Period_DU
+        periodAu:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: Period_AU
+        commentaires:
+            type: text
+            nullable: true
+            length: -1
+            fixed: false
+            column: Commentaires
+        fdvTime:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: FDV_Time
+        maxpayload:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: MaxPayload
+        volMd:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: Vol_MD
+        volLd:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: Vol_LD
+        wgtLse:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: Wgt_LSE
+        volLse:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: Vol_LSE
+        pldLse:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: PLD_LSE
+        len20ft:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: LEN20FT
+    manyToOne:
+        fkAircrafttype:
+            targetEntity: Tblaircrafttype
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                FK_AircraftType_id:
+                    referencedColumnName: PK_id
+            orphanRemoval: false
+        fkSector:
+            targetEntity: Tblsector
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                FK_sector_id:
+                    referencedColumnName: PK_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

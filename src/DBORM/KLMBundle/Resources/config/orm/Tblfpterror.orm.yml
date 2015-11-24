@@ -1,0 +1,49 @@
+Tblfpterror:
+    type: entity
+    table: TblFPTError
+    id:
+        pkId:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            id: true
+            column: PK_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        fkFlightnumber:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: FK_FlightNumber
+        fkFlightdate:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: FK_FlightDate
+        fkVersion:
+            type: text
+            nullable: true
+            length: -1
+            fixed: false
+            column: FK_Version
+        fkUserId:
+            type: string
+            nullable: true
+            length: 10
+            fixed: false
+            column: FK_User_id
+        date:
+            type: datetime
+            nullable: true
+            column: Date
+        comment:
+            type: text
+            nullable: true
+            length: -1
+            fixed: false
+            column: Comment
+    lifecycleCallbacks: {  }

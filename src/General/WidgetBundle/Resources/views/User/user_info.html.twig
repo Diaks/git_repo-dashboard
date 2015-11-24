@@ -1,0 +1,22 @@
+<div class="white-panel pn donut-chart">
+      <div class="white-header">
+			<h5>User info</h5>
+      </div>
+		<div class="row" id="userID" style =" margin:auto; margin-top:0px; width:98%;">
+			<div class="col-sm-12 col-xs-12 boxContent">
+				<p>Welcome</p>
+				<h3> {{ app.session.get('matricule') }} </h3> 
+				<h3> {{ app.session.get('firstname') }} </h3> 
+				<h3> {{ app.session.get('lastname') }} </h3> 
+				{% if app.session.get('subsect') != "Unknown" and app.session.get('subsect') != "" %}
+					<p> {{ 'Today you handle:' }} </p>
+					<h3> {{ app.session.get('subsect') }} </h3>
+				{% elseif app.session.get('sector') != "Unknown" and app.session.get('sector') != "" %}
+					<p> {{ 'Today you handle:' }} </p>
+					<h3> {{ app.session.get('sector') }} </h3>
+				{% endif %}
+				<br />
+				<a class = "btn btnT1" href="{{ home_url }}"> Edit </a>
+			</div>
+	    </div>
+</div>

@@ -1,0 +1,58 @@
+{% extends '::base.html.twig' %}
+{% block title %}
+	{% if app.session.get('type_profil') == '1' %}
+		FA home page
+	{% elseif app.session.get('type_profil') == '2' %}
+		Admin home page
+	{% elseif  app.session.get('type_profil') == '11' %}
+	    EDC home page
+	{% endif %}
+{% endblock %}
+
+{% block body %}
+    <script type="text/javascript">
+	$(function() {
+		setInterval(function() {
+    		$('#w0').load(location.href+' #w0');
+    		$('#w1').load(location.href+' #w1');
+    		$('#w2').load(location.href+' #w2')
+  		}, 15000); //refresh every 15s
+	});
+	</script>
+
+    <div class="row">
+		<div class="col-lg-12 main-chart">
+			<h1>Purge Monitoring</h1>
+			 <div class="row mtbox">
+			 	{% if app.session.get('type_profil') != '2' %}       
+				  <div class="col-md-12 col-sm-12">
+				{% else %}
+				  <div class="col-md-6 col-sm-6">
+				{% endif %}
+					<div id="w1">
+						{% set status = 'Requested' %}
+	               		{{ include('GeneralWidgetBundle:Admin:DB_status_purge.html.twig') }}
+	                </div>
+	              </div>
+	         </div>
+	         {% if app.session.get('type_profil') == '2' %}       
+	         	</div>
+					<div class="col-md-6 col-sm-6">
+						<div id="w2">
+							{% set status = 'Processing' %}
+	                  		{{ include('GeneralWidgetBundle:Admin:DB_status_purge.html.twig') }}
+	                  	</div>
+	                </div>
+				</div>
+				<div class="row mt1">
+					<div class="col-md-12 col-sm-12">
+						<div id="w0">
+	                  		{{ include('GeneralWidgetBundle:Admin:db_clean_cache.html.twig') }}
+	                  	</div>
+	                </div>
+				</div>
+			{% endif %}
+		</div>
+	</div>
+	
+{% endblock %}

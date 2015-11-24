@@ -1,0 +1,30 @@
+{# Calls: RMCARGODashboardAdminBundle:Admin:getNbDayDone  #}
+
+<script type="text/javascript">
+	$(function() {
+		setInterval(function() {
+    		$('#ToDoPublished').load(location.href+' #ToDoPublished');
+  		}, 30000);
+	});
+</script>
+
+<div class="white-panel pn donut-chart">
+      <div class="white-header">
+			<h5>Published</h5>
+      </div>
+		<div class="row" id="ToDoPublished" style ="margin:auto; margin-top:0px;">
+			<div class="col-sm-12 col-xs-12 boxContent"  style="overflow-y:scroll; height:230px; width:98%">
+				<table>
+    				<tr>
+    					<th> Flight </th><th> Date </th>
+    					{% for Flight in ToDoPublished %}
+        					<tr>
+        						<td>{{ Flight.FK_FlightNumber }}</td>
+        						<td>{{ Flight.FK_FlightDate }}</td>
+        					</tr>
+    					{% endfor %}
+    				</tr>
+				</table>
+			</div>
+	    </div>
+</div>

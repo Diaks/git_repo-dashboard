@@ -1,0 +1,42 @@
+<?php
+
+namespace DBORM\KLMBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Tblsubsector
+ *
+ * @ORM\Table(name="TblSubSector", indexes={@ORM\Index(name="IDX_C940AEED21614BD8", columns={"FK_sector_id"})})
+ * @ORM\Entity
+ */
+class Tblsubsector
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="PK_SubSector_code", type="string", length=50, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $pkSubsectorCode;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Email", type="string", length=50, nullable=true)
+     */
+    private $email;
+
+    /**
+     * @var \Tblsector
+     *
+     * @ORM\ManyToOne(targetEntity="Tblsector")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="FK_sector_id", referencedColumnName="PK_id")
+     * })
+     */
+    private $fkSector;
+
+
+}

@@ -1,0 +1,65 @@
+Tblairport:
+    type: entity
+    table: TblAirport
+    indexes:
+        IDX_8AE443B2E95E0CEC:
+            columns:
+                - FK_City_code
+        IDX_8AE443B28C6B24DB:
+            columns:
+                - FK_Country_code
+    id:
+        pkAirportCode:
+            type: string
+            nullable: false
+            length: 5
+            fixed: false
+            id: true
+            column: PK_Airport_code
+            generator:
+                strategy: IDENTITY
+    fields:
+        airport:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: Airport
+        fsczone:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: FSCZone
+        fsczoneid1:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: FSCZoneID1
+        fsczoneid2:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: FSCZoneID2
+    manyToOne:
+        fkCityCode:
+            targetEntity: Tblcity
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                FK_City_code:
+                    referencedColumnName: PK_City_code
+            orphanRemoval: false
+        fkCountryCode:
+            targetEntity: Tblcountry
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                FK_Country_code:
+                    referencedColumnName: PK_Country_code
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

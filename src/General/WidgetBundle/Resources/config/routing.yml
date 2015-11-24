@@ -1,0 +1,15 @@
+general_widget_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: "GeneralWidgetBundle:Default:index" }
+    
+general_widget_profil_edit:
+    path:     /Profil_edit/{home_url}
+    defaults: { _controller: "GeneralWidgetBundle:Widget:login_edit" }
+    
+clean_db_log:
+    path:     /clean_db_log/{connector}-{dbname}-{url}
+    defaults: { _controller: "GeneralWidgetBundle:Widget:clearDBCache" }
+    
+admin_getDBSize:
+    path:     /getDBSize/{dbname}
+    defaults: { _controller: "GeneralWidgetBundle:Widget:getDBSize" }

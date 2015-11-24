@@ -1,0 +1,129 @@
+Tblfptrouting:
+    type: entity
+    table: TblFPTRouting
+    indexes:
+        IDX_9F5379B892A71727:
+            columns:
+                - FK_Airport_origin
+        IDX_9F5379B879ACDBB4:
+            columns:
+                - FK_Airport_dest_1
+        IDX_9F5379B8E0A58A0E:
+            columns:
+                - FK_Airport_dest_2
+        IDX_9F5379B897A2BA98:
+            columns:
+                - FK_Airport_dest_3
+        IDX_9F5379B89C62F3B:
+            columns:
+                - FK_Airport_dest_4
+        IDX_9F5379B87EC11FAD:
+            columns:
+                - FK_Airport_dest_5
+        IDX_9F5379B8E7C84E17:
+            columns:
+                - FK_Airport_dest_6
+        IDX_9F5379B890CF7E81:
+            columns:
+                - FK_Airport_dest_7
+        IDX_9F5379B8B41EA3FFD3F072244D225600:
+            columns:
+                - FK_FlightNumber
+                - FK_FlightDate
+                - FK_Version
+    id:
+        pkId:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: PK_id
+            generator:
+                strategy: IDENTITY
+    manyToOne:
+        fkAirportOrigin:
+            targetEntity: Tblairport
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                FK_Airport_origin:
+                    referencedColumnName: PK_Airport_code
+            orphanRemoval: false
+        fkAirportDest1:
+            targetEntity: Tblairport
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                FK_Airport_dest_1:
+                    referencedColumnName: PK_Airport_code
+            orphanRemoval: false
+        fkAirportDest2:
+            targetEntity: Tblairport
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                FK_Airport_dest_2:
+                    referencedColumnName: PK_Airport_code
+            orphanRemoval: false
+        fkAirportDest3:
+            targetEntity: Tblairport
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                FK_Airport_dest_3:
+                    referencedColumnName: PK_Airport_code
+            orphanRemoval: false
+        fkAirportDest4:
+            targetEntity: Tblairport
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                FK_Airport_dest_4:
+                    referencedColumnName: PK_Airport_code
+            orphanRemoval: false
+        fkAirportDest5:
+            targetEntity: Tblairport
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                FK_Airport_dest_5:
+                    referencedColumnName: PK_Airport_code
+            orphanRemoval: false
+        fkAirportDest6:
+            targetEntity: Tblairport
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                FK_Airport_dest_6:
+                    referencedColumnName: PK_Airport_code
+            orphanRemoval: false
+        fkAirportDest7:
+            targetEntity: Tblairport
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                FK_Airport_dest_7:
+                    referencedColumnName: PK_Airport_code
+            orphanRemoval: false
+        fkFlightnumber:
+            targetEntity: Tblfptflights
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                FK_FlightNumber:
+                    referencedColumnName: PK_FlightNumber
+                FK_FlightDate:
+                    referencedColumnName: PK_FlightDate
+                FK_Version:
+                    referencedColumnName: PK_Version
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

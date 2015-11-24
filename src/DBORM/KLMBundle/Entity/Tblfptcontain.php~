@@ -1,0 +1,191 @@
+<?php
+
+namespace DBORM\KLMBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Tblfptcontain
+ *
+ * @ORM\Table(name="TblFPTContain", indexes={@ORM\Index(name="IDX_7144378AB41EA3FFD3F072244D225600", columns={"FK_FlightNumber", "FK_FlightDate", "FK_Version"})})
+ * @ORM\Entity
+ */
+class Tblfptcontain
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="PK_id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $pkId;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="TotalWeight", type="float", precision=53, scale=0, nullable=true)
+     */
+    private $totalweight;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="TotalPMD", type="float", precision=53, scale=0, nullable=true)
+     */
+    private $totalpmd;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="TotalPLD", type="float", precision=53, scale=0, nullable=true)
+     */
+    private $totalpld;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="TotalAKE", type="float", precision=53, scale=0, nullable=true)
+     */
+    private $totalake;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="TotalGrossWeight", type="float", precision=53, scale=0, nullable=true)
+     */
+    private $totalgrossweight;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="OpticofWeight", type="float", precision=53, scale=0, nullable=true)
+     */
+    private $opticofweight;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="OpticofPMD", type="float", precision=53, scale=0, nullable=true)
+     */
+    private $opticofpmd;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="OpticofAKE", type="float", precision=53, scale=0, nullable=true)
+     */
+    private $opticofake;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="OpticofPLD", type="float", precision=53, scale=0, nullable=true)
+     */
+    private $opticofpld;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="SDXAKE", type="float", precision=53, scale=0, nullable=true)
+     */
+    private $sdxake;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="SDXLoose_WGT", type="float", precision=53, scale=0, nullable=true)
+     */
+    private $sdxlooseWgt;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="SDXLoose_Vol", type="float", precision=53, scale=0, nullable=true)
+     */
+    private $sdxlooseVol;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="NAR_WGT", type="float", precision=53, scale=0, nullable=true)
+     */
+    private $narWgt;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="ONH_WGT", type="float", precision=53, scale=0, nullable=true)
+     */
+    private $onhWgt;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="NARONH_WGT", type="float", precision=53, scale=0, nullable=true)
+     */
+    private $naronhWgt;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="NAR_POUR", type="float", precision=53, scale=0, nullable=true)
+     */
+    private $narPour;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="ONH_POUR", type="float", precision=53, scale=0, nullable=true)
+     */
+    private $onhPour;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="NARONH_POUR", type="float", precision=53, scale=0, nullable=true)
+     */
+    private $naronhPour;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="DSKPMD", type="float", precision=53, scale=0, nullable=true)
+     */
+    private $dskpmd;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="DSKPLD", type="float", precision=53, scale=0, nullable=true)
+     */
+    private $dskpld;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="DSKAKE", type="float", precision=53, scale=0, nullable=true)
+     */
+    private $dskake;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="SCBAvg", type="float", precision=53, scale=0, nullable=true)
+     */
+    private $scbavg;
+
+    /**
+     * @var \Tblfptflights
+     *
+     * @ORM\ManyToOne(targetEntity="Tblfptflights")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="FK_FlightNumber", referencedColumnName="PK_FlightNumber"),
+     *   @ORM\JoinColumn(name="FK_FlightDate", referencedColumnName="PK_FlightDate"),
+     *   @ORM\JoinColumn(name="FK_Version", referencedColumnName="PK_Version")
+     * })
+     */
+    private $fkFlightnumber;
+
+
+}

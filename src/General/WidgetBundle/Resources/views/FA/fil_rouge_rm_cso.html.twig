@@ -1,0 +1,80 @@
+<div class="white-panel pn donut-chart" style ="margin-top:0px; height: 500px;">
+      <div class="white-header">
+			<h5>...</h5>
+      </div>
+		<div class="row" id="filRougeRMCSO" style ="margin:auto;">
+			<div class="col-sm-4 col-xs-4 boxContent"  style="margin-top:15px; width:98%">
+  				
+  				
+				<form id="form_full_page" class="FormAlign">
+					{{ form_errors(form.dataBaseAction) }}
+	          		{{ form_widget(form.dataBaseAction) }}
+	          		
+	          		{{ form_errors(form.id) }}
+	          		{{ form_widget(form.id) }}
+	          		
+	          		{{ form_errors(form.start) }}
+	          		{{ form_widget(form.start) }}
+	          		
+	          		{{ form_errors(form.subSector) }}
+	          		{{ form_widget(form.subSector) }}
+	          		
+	          		{{ form_errors(form.userName) }}
+	          		{{ form_widget(form.userName) }}
+	          		
+	          		{{ form_label(form.Identity) }}
+	          		{{ form_errors(form.Identity) }}
+	          		{{ form_widget(form.Identity) }}
+	          		<br />
+	          		
+	          		{{ form_label(form.RequestedBy) }}
+	          		{{ form_errors(form.RequestedBy) }}
+	          		{{ form_widget(form.RequestedBy) }}
+	          		<br />
+	          		
+	          		{{ form_label(form.OriginMarket) }}
+	          		{{ form_errors(form.OriginMarket) }}
+	          		{{ form_widget(form.OriginMarket) }}
+	          		<br />
+	          		
+	          		{{ form_label(form.AwbPrefix) }}
+	          		{{ form_errors(form.AwbPrefix) }}
+	          		{{ form_widget(form.AwbPrefix) }}
+	          		<br />
+	          		
+	          		{{ form_label(form.AwbNumber) }}
+	          		{{ form_errors(form.AwbNumber) }}
+	          		{{ form_widget(form.AwbNumber) }}
+	          		<br />
+  					
+  					{{ form_label(form.QueuesReasons) }}
+  					<div id="listQueuesReasons" style="margin-left:35%;height:150px;overflow:auto;width:30%;">
+	     				{{ form_errors(form.QueuesReasons) }}
+		          		{{ form_widget(form.QueuesReasons) }}
+	          		</div>
+	          		
+			     	
+          			<div class="submit">
+						{{ form_widget(form.Save, { 'attr': {'class': 'btn btnT1'} }) }}
+					</div>
+					
+					{{ form_rest(form) }}
+				</form>
+          		
+			</div>
+	    </div>
+	 	 <script type="text/javascript">
+         		 $('#form_full_page #listQueuesReasons label')
+         		.css('display','block')
+         		.css('width', '200px');
+         		
+         		$('#form_full_page input[type="checkbox"]')
+         		.css('width', '30px');
+         		
+         		  
+         		 
+          		
+         </script>
+</div>
+
+

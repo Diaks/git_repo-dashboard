@@ -1,0 +1,3 @@
+rmccc_action_rmccc_homepage:
+    path:     /CCC_Action
+    defaults: { _controller: RMCCCActionRMCCCBundle:Home:index }

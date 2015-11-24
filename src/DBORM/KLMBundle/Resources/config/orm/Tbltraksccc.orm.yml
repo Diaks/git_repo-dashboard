@@ -1,0 +1,127 @@
+Tbltraksccc:
+    type: entity
+    table: TblTraksCCC
+    indexes:
+        IDX_74A32F2D62C6738A:
+            columns:
+                - FK_action_id
+        IDX_74A32F2D94038302:
+            columns:
+                - FK_status_id
+        IDX_74A32F2D9AED6FCA:
+            columns:
+                - FK_user_id
+        IDX_74A32F2DC5DF7645:
+            columns:
+                - FK_resultat_id
+        IDX_74A32F2D63BE2921:
+            columns:
+                - FK_hub
+    id:
+        pkId:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: PK_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        fkSubsectorCode:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            column: FK_subsector_code
+        flightdate:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: FlightDate
+        trakscomment:
+            type: string
+            nullable: true
+            length: 250
+            fixed: false
+            column: TraksComment
+        ccccomment:
+            type: string
+            nullable: true
+            length: 250
+            fixed: false
+            column: CCCComment
+        rfocomment:
+            type: string
+            nullable: true
+            length: 250
+            fixed: false
+            column: RFOComment
+        priorite:
+            type: smallint
+            nullable: true
+            unsigned: false
+            column: Priorite
+        uld:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: ULD
+        awb:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: AWB
+        datehistorique:
+            type: datetime
+            nullable: false
+            column: DateHistorique
+    manyToOne:
+        fkAction:
+            targetEntity: Tblaction
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                FK_action_id:
+                    referencedColumnName: PK_id
+            orphanRemoval: false
+        fkStatus:
+            targetEntity: Tblstatus
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                FK_status_id:
+                    referencedColumnName: PK_id
+            orphanRemoval: false
+        fkUser:
+            targetEntity: Tbluser
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                FK_user_id:
+                    referencedColumnName: PK_id
+            orphanRemoval: false
+        fkResultat:
+            targetEntity: Tbltraksresultat
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                FK_resultat_id:
+                    referencedColumnName: PK_id
+            orphanRemoval: false
+        fkHub:
+            targetEntity: Tblairport
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                FK_hub:
+                    referencedColumnName: PK_Airport_code
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

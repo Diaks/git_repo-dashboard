@@ -1,0 +1,68 @@
+<?php
+
+namespace DBORM\KLMBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Tblfptactivestatus
+ *
+ * @ORM\Table(name="TblFPTActiveStatus", indexes={@ORM\Index(name="IDX_D453B727B41EA3FFD3F072244D225600", columns={"FK_FlightNumber", "FK_FlightDate", "FK_Version"}), @ORM\Index(name="IDX_D453B72716F201A1", columns={"FK_Status_id"})})
+ * @ORM\Entity
+ */
+class Tblfptactivestatus
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="PK_id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $pkId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Comment", type="text", length=-1, nullable=true)
+     */
+    private $comment;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="AlreadyTried", type="integer", nullable=true)
+     */
+    private $alreadytried;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="StartTimeEvt", type="datetime", nullable=true)
+     */
+    private $starttimeevt;
+
+    /**
+     * @var \Tblfptflights
+     *
+     * @ORM\ManyToOne(targetEntity="Tblfptflights")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="FK_FlightNumber", referencedColumnName="PK_FlightNumber"),
+     *   @ORM\JoinColumn(name="FK_FlightDate", referencedColumnName="PK_FlightDate"),
+     *   @ORM\JoinColumn(name="FK_Version", referencedColumnName="PK_Version")
+     * })
+     */
+    private $fkFlightnumber;
+
+    /**
+     * @var \Tblfptstatus
+     *
+     * @ORM\ManyToOne(targetEntity="Tblfptstatus")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="FK_Status_id", referencedColumnName="PK_id")
+     * })
+     */
+    private $fkStatus;
+
+
+}

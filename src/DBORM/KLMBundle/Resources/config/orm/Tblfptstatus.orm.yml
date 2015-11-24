@@ -1,0 +1,14 @@
+Tblfptstatus:
+    type: entity
+    table: TblFPTStatus
+    id:
+        pkId:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            id: true
+            column: PK_id
+            generator:
+                strategy: IDENTITY
+    lifecycleCallbacks: {  }

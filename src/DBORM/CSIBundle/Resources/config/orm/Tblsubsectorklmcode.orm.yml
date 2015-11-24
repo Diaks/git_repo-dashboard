@@ -1,0 +1,34 @@
+Tblsubsectorklmcode:
+    type: entity
+    table: TblSubSectorKLMCode
+    indexes:
+        IDX_E72DA6242E862701:
+            columns:
+                - FK_subsector_id
+    id:
+        pkId:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: PK_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        klmSubsecCode:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: KLM_subsec_code
+    manyToOne:
+        fkSubsector:
+            targetEntity: Tblsubsector
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                FK_subsector_id:
+                    referencedColumnName: PK_SubSector_code
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

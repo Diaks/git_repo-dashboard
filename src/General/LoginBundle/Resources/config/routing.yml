@@ -1,0 +1,19 @@
+general_login_homepage:
+    path:     /
+    defaults: { _controller: "GeneralLoginBundle:Login:index" }
+    
+general_logout:
+    path:     /logout
+    defaults: { _controller: "GeneralLoginBundle:Login:logout" }
+    
+    
+    
+        
+general_subsect:
+    path:     /subsect
+    defaults: { _controller: "GeneralLoginBundle:Login:subsectSelect" }
+
+
+general_logout:
+    path:     /test
+    defaults: { _controller: "GeneralLoginBundle:Login:logout" }

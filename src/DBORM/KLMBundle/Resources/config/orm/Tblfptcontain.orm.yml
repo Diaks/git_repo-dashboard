@@ -1,0 +1,166 @@
+Tblfptcontain:
+    type: entity
+    table: TblFPTContain
+    indexes:
+        IDX_7144378AB41EA3FFD3F072244D225600:
+            columns:
+                - FK_FlightNumber
+                - FK_FlightDate
+                - FK_Version
+    id:
+        pkId:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: PK_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        totalweight:
+            type: float
+            nullable: true
+            precision: 53
+            scale: 0
+            column: TotalWeight
+        totalpmd:
+            type: float
+            nullable: true
+            precision: 53
+            scale: 0
+            column: TotalPMD
+        totalpld:
+            type: float
+            nullable: true
+            precision: 53
+            scale: 0
+            column: TotalPLD
+        totalake:
+            type: float
+            nullable: true
+            precision: 53
+            scale: 0
+            column: TotalAKE
+        totalgrossweight:
+            type: float
+            nullable: true
+            precision: 53
+            scale: 0
+            column: TotalGrossWeight
+        opticofweight:
+            type: float
+            nullable: true
+            precision: 53
+            scale: 0
+            column: OpticofWeight
+        opticofpmd:
+            type: float
+            nullable: true
+            precision: 53
+            scale: 0
+            column: OpticofPMD
+        opticofake:
+            type: float
+            nullable: true
+            precision: 53
+            scale: 0
+            column: OpticofAKE
+        opticofpld:
+            type: float
+            nullable: true
+            precision: 53
+            scale: 0
+            column: OpticofPLD
+        sdxake:
+            type: float
+            nullable: true
+            precision: 53
+            scale: 0
+            column: SDXAKE
+        sdxlooseWgt:
+            type: float
+            nullable: true
+            precision: 53
+            scale: 0
+            column: SDXLoose_WGT
+        sdxlooseVol:
+            type: float
+            nullable: true
+            precision: 53
+            scale: 0
+            column: SDXLoose_Vol
+        narWgt:
+            type: float
+            nullable: true
+            precision: 53
+            scale: 0
+            column: NAR_WGT
+        onhWgt:
+            type: float
+            nullable: true
+            precision: 53
+            scale: 0
+            column: ONH_WGT
+        naronhWgt:
+            type: float
+            nullable: true
+            precision: 53
+            scale: 0
+            column: NARONH_WGT
+        narPour:
+            type: float
+            nullable: true
+            precision: 53
+            scale: 0
+            column: NAR_POUR
+        onhPour:
+            type: float
+            nullable: true
+            precision: 53
+            scale: 0
+            column: ONH_POUR
+        naronhPour:
+            type: float
+            nullable: true
+            precision: 53
+            scale: 0
+            column: NARONH_POUR
+        dskpmd:
+            type: float
+            nullable: true
+            precision: 53
+            scale: 0
+            column: DSKPMD
+        dskpld:
+            type: float
+            nullable: true
+            precision: 53
+            scale: 0
+            column: DSKPLD
+        dskake:
+            type: float
+            nullable: true
+            precision: 53
+            scale: 0
+            column: DSKAKE
+        scbavg:
+            type: float
+            nullable: true
+            precision: 53
+            scale: 0
+            column: SCBAvg
+    manyToOne:
+        fkFlightnumber:
+            targetEntity: Tblfptflights
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                FK_FlightNumber:
+                    referencedColumnName: PK_FlightNumber
+                FK_FlightDate:
+                    referencedColumnName: PK_FlightDate
+                FK_Version:
+                    referencedColumnName: PK_Version
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,32 @@
+<?php
+
+namespace DBORM\KLMBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Tblcountry
+ *
+ * @ORM\Table(name="TblCountry")
+ * @ORM\Entity
+ */
+class Tblcountry
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="PK_Country_code", type="string", length=5, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $pkCountryCode;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Country", type="string", length=50, nullable=true)
+     */
+    private $country;
+
+
+}

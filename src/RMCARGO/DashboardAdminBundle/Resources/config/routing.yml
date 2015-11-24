@@ -1,0 +1,50 @@
+rmcargo_dashboard_admin_homepage:
+    path:     /Admin_Dashboard
+    defaults: { _controller: "RMCARGODashboardAdminBundle:Admin:index" }
+
+rmcargo_dashboard_db_purge_stat:
+    pattern: /requested_purge_b152ddb696c856ae242230edc26e8b4a3359eb246c_stat/{status}
+    defaults: { _controller: "RMCARGODashboardAdminBundle:Admin:purge_status" }
+      
+rmcargo_dashboard_admin_data_details:
+    pattern: /admin_data_details
+    defaults: { _controller: "RMCARGODashboardAdminBundle:Admin:data_details" }
+
+rmcargo_dashboard_admin_purge_monitoring:
+    pattern: /purge_monitoring
+    defaults: { _controller: "RMCARGODashboardAdminBundle:Admin:clean_monitoring" }
+
+rmcargo_dashboard_admin_robot_pc_monitoring:
+    pattern: /robot_pc_monitoring
+    defaults: { _controller: "RMCARGODashboardAdminBundle:Admin:robot_pc_monitoring" }
+    
+rmcargo_dashboard_admin_robot_pc_delete:
+    pattern: /robot_pc_monitoring_delete/{id}
+    defaults: { _controller: "RMCARGODashboardAdminBundle:Admin:delete_pc" }
+    
+rmcargo_dashboard_admin_users_monitoring:
+    pattern: /user_monitoring
+    defaults: { _controller: "RMCARGODashboardAdminBundle:Admin:users_monitoring" }
+    
+rmcargo_dashboard_admin_user_delete:
+    pattern: /user_delete/{id}
+    defaults: { _controller: "RMCARGODashboardAdminBundle:Admin:delete_user" }
+
+rmcargo_dashboard_admin_user_edit:
+    pattern: /user_edit/{id}
+    defaults: { _controller: "RMCARGODashboardAdminBundle:Admin:user_edit" }
+    
+rmcargo_dashboard_admin_users_search:
+    pattern: /users_search/
+    defaults: { _controller: "RMCARGODashboardAdminBundle:Admin:users_search" }
+    
+rmcargo_dashboard_admin_group_monitoring:
+    pattern: /group_monitoring/
+    defaults: { _controller: "RMCARGODashboardAdminBundle:Admin:group_monitoring" }
+    
+rmcargo_dashboard_admin_group_delete:
+    pattern: /group_delete/{id}
+    defaults: { _controller: "RMCARGODashboardAdminBundle:Admin:delete_group" }
+rmcargo_dashboard_admin_prio_monitoring:
+    pattern: /prio_monitoring
+    defaults: { _controller: "RMCARGODashboardAdminBundle:Admin:prio_monitoring" }

@@ -1,0 +1,25 @@
+{% block choice_widget %}
+
+{% spaceless %}
+    
+     {% if multiple %}
+        <ul {{ block('widget_container_attributes') }}>
+        {% set counter = 0 %}
+        {% for child in form %}
+           
+            {{ form_widget(child) }}
+            {{ form_label(child) }}
+            <br />
+            
+            
+            
+        {% endfor %}
+        </ul>
+    {% else %}
+        {# just let the choice widget render the select tag #}
+        {{ block('widget_choice') }}
+    {% endif %}
+       
+   
+{% endspaceless %}
+{% endblock %} #}

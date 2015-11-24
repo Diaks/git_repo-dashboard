@@ -1,0 +1,25 @@
+{# Calls: RMCARGODashboardAdminBundle:Admin:getNbStatus #}
+{# Params: status (refers to the name of the status in ActiveStatus, eg: 'Requested') #}
+
+<script type="text/javascript">
+	$(function() {
+		setInterval(function() {
+    		$('#requested_status').load(location.href+' #requested_status');
+  		}, 25000); //refresh every 25s
+	});
+</script>
+
+<div class="white-panel pn donut-chart">
+      <div class="white-header">
+			<h5>{{ status }} Status</h5>
+      </div>
+		<div class="row" id="requested_status" style =" margin:auto; margin-top:0px;">
+			<div class="col-sm-12 col-xs-12 boxContent">
+			{% set nb_status = render(controller('RMCARGODashboardAdminBundle:Admin:getNbStatus', {'status': status })) %}
+				<h3 id ="toDo" > {{ nb_status }} {{ status }} </h3>
+				<p><a href="{{ path('rmcargo_dashboard_db_purge_stat', {'status': status }) }}" 
+                class='btn' onclick="return confirm('Delete all {{ status }}?')"
+             >Purge</a></p>
+			</div>
+	    </div>
+</div>

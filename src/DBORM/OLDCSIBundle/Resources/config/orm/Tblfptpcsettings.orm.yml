@@ -1,0 +1,29 @@
+Tblfptpcsettings:
+    type: entity
+    table: tblFPTPCSettings
+    id: {  }
+    fields:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            column: ID
+        robotpcafr:
+            type: string
+            nullable: true
+            length: 12
+            fixed: false
+            column: RobotPCAFR
+        lasttimealive:
+            type: string
+            nullable: true
+            length: 20
+            fixed: false
+            column: LastTimeAlive
+        tid:
+            type: string
+            nullable: true
+            length: 20
+            fixed: false
+            column: TID
+    lifecycleCallbacks: {  }

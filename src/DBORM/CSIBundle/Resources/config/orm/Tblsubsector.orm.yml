@@ -1,0 +1,35 @@
+Tblsubsector:
+    type: entity
+    table: TblSubSector
+    indexes:
+        IDX_C940AEED21614BD8:
+            columns:
+                - FK_sector_id
+    id:
+        pkSubsectorCode:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            id: true
+            column: PK_SubSector_code
+            generator:
+                strategy: IDENTITY
+    fields:
+        email:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: Email
+    manyToOne:
+        fkSector:
+            targetEntity: Tblsector
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                FK_sector_id:
+                    referencedColumnName: PK_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,117 @@
+<?php
+
+namespace DBORM\KLMBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Tblfptrouting
+ *
+ * @ORM\Table(name="TblFPTRouting", indexes={@ORM\Index(name="IDX_9F5379B892A71727", columns={"FK_Airport_origin"}), @ORM\Index(name="IDX_9F5379B879ACDBB4", columns={"FK_Airport_dest_1"}), @ORM\Index(name="IDX_9F5379B8E0A58A0E", columns={"FK_Airport_dest_2"}), @ORM\Index(name="IDX_9F5379B897A2BA98", columns={"FK_Airport_dest_3"}), @ORM\Index(name="IDX_9F5379B89C62F3B", columns={"FK_Airport_dest_4"}), @ORM\Index(name="IDX_9F5379B87EC11FAD", columns={"FK_Airport_dest_5"}), @ORM\Index(name="IDX_9F5379B8E7C84E17", columns={"FK_Airport_dest_6"}), @ORM\Index(name="IDX_9F5379B890CF7E81", columns={"FK_Airport_dest_7"}), @ORM\Index(name="IDX_9F5379B8B41EA3FFD3F072244D225600", columns={"FK_FlightNumber", "FK_FlightDate", "FK_Version"})})
+ * @ORM\Entity
+ */
+class Tblfptrouting
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="PK_id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $pkId;
+
+    /**
+     * @var \Tblairport
+     *
+     * @ORM\ManyToOne(targetEntity="Tblairport")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="FK_Airport_origin", referencedColumnName="PK_Airport_code")
+     * })
+     */
+    private $fkAirportOrigin;
+
+    /**
+     * @var \Tblairport
+     *
+     * @ORM\ManyToOne(targetEntity="Tblairport")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="FK_Airport_dest_1", referencedColumnName="PK_Airport_code")
+     * })
+     */
+    private $fkAirportDest1;
+
+    /**
+     * @var \Tblairport
+     *
+     * @ORM\ManyToOne(targetEntity="Tblairport")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="FK_Airport_dest_2", referencedColumnName="PK_Airport_code")
+     * })
+     */
+    private $fkAirportDest2;
+
+    /**
+     * @var \Tblairport
+     *
+     * @ORM\ManyToOne(targetEntity="Tblairport")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="FK_Airport_dest_3", referencedColumnName="PK_Airport_code")
+     * })
+     */
+    private $fkAirportDest3;
+
+    /**
+     * @var \Tblairport
+     *
+     * @ORM\ManyToOne(targetEntity="Tblairport")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="FK_Airport_dest_4", referencedColumnName="PK_Airport_code")
+     * })
+     */
+    private $fkAirportDest4;
+
+    /**
+     * @var \Tblairport
+     *
+     * @ORM\ManyToOne(targetEntity="Tblairport")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="FK_Airport_dest_5", referencedColumnName="PK_Airport_code")
+     * })
+     */
+    private $fkAirportDest5;
+
+    /**
+     * @var \Tblairport
+     *
+     * @ORM\ManyToOne(targetEntity="Tblairport")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="FK_Airport_dest_6", referencedColumnName="PK_Airport_code")
+     * })
+     */
+    private $fkAirportDest6;
+
+    /**
+     * @var \Tblairport
+     *
+     * @ORM\ManyToOne(targetEntity="Tblairport")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="FK_Airport_dest_7", referencedColumnName="PK_Airport_code")
+     * })
+     */
+    private $fkAirportDest7;
+
+    /**
+     * @var \Tblfptflights
+     *
+     * @ORM\ManyToOne(targetEntity="Tblfptflights")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="FK_FlightNumber", referencedColumnName="PK_FlightNumber"),
+     *   @ORM\JoinColumn(name="FK_FlightDate", referencedColumnName="PK_FlightDate"),
+     *   @ORM\JoinColumn(name="FK_Version", referencedColumnName="PK_Version")
+     * })
+     */
+    private $fkFlightnumber;
+
+
+}

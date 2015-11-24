@@ -1,0 +1,28 @@
+<div class="white-panel pn donut-chart">
+      <div class="white-header">
+			<h5>Sector Comment</h5>
+      </div>
+	  <div class="row" id="userID" style =" margin:auto; margin-top:0px; width:98%;">
+			<div class="col-sm-12 col-xs-12 boxContent">
+				<p>{{ comment | raw }}</p>
+				<br />
+				<button class="btn btnT1" >Edit</button>
+				<br />
+			</div>
+	  </div>
+</div>
+
+<div id="textEditor" style="display:none" class="white-panel donut-chart">
+	<div class="white-header">
+			<h5>Comment</h5>
+    </div>
+    <div class="row" id="userID" style =" margin:auto; margin-top:0px; width:98%;">
+		<div class="col-sm-12 col-xs-12 boxContent">
+			<form action="" method="post" class='form-center' {{ form_enctype(form) }}>
+     			{{ form_errors(form.Comment) }}
+     			{{ form_widget(form.Comment) }}
+	 			{{ form_widget(form) }}
+			</form>
+		</div>
+	</div>
+</div>

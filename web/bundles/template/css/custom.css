@@ -1,0 +1,394 @@
+@CHARSET "ISO-8859-1";
+
+/*__________________________________________________________________________________________
+  _   _       _            
+ | \ | |     | |           
+ |  \| | ___ | |_ ___  ___ 
+ | . ` |/ _ \| __/ _ \/ __|
+ | |\  | (_) | ||  __/\__ \
+ |_| \_|\___/ \__\___||___/
+____________________________________________________________________________________________*/
+
+/*Find big font to comment @:
+/*http://patorjk.com/software/taag/
+/*use big
+
+/*Color picker @:
+/*http://www.color-hex.com/
+
+/*Fonts @:
+/*http://www.google.com/fonts
+
+/*____________________________________________________________________________________________
+   _____                           _ 
+  / ____|                         | |
+ | |  __  ___ _ __   ___ _ __ __ _| |
+ | | |_ |/ _ \ '_ \ / _ \ '__/ _` | |
+ | |__| |  __/ | | |  __/ | | (_| | |
+  \_____|\___|_| |_|\___|_|  \__,_|_|
+  
+_______________________________________________________________________________________________*/
+
+body{
+	background: #424A5D !important;
+}
+#main{
+	margin: 80px auto auto;
+	width:93%;
+}
+#main-content{
+	margin-left:220px;
+}
+#content{
+	padding:0px;
+	background-color:#e5eaf9;
+}
+p{
+	margin-left:0 !important;
+}
+.wrapper{
+	margin-top:0px;
+}
+.ds{
+	display:none;
+}
+.sparkline canvas{
+	width:100% !important;
+}
+h1{
+	color:#f4f4f4;
+	background-color:#424a5d;
+    font-size: 45px;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    padding-top: 10px;
+    padding-bottom: 10px; 
+}
+.col-sm-6, .col-xs-6 {
+    margin-top: 20px;
+}
+.sp .col-sm-6, .sp .col-xs-6 {
+    margin-top: 0px;
+}
+.sp{
+	margin-top:25px;
+}
+.cake-sql-log{
+	display:none;
+}
+.btn{
+	border-color:#424A5D !important;
+	color:#424A5D !important;
+	background:none !important;
+	background-color: #E5EAF9 !important;
+	box-shadow:none !important;
+}
+.btnT1{
+	background-color: #424A5D !important;
+	color:#E5EAF9 !important;
+}
+.formListScroll{
+	border-width: 1px;
+    margin-left: 10px;
+    padding-top: 3px;
+}
+th, td{
+	text-align: center !important;
+}
+#form_Matricule{
+	padding-bottom: 0px !important;
+    padding-top: 0px !important;
+}
+
+/*_______________________________________________________________________________________________
+   _____ _     _        ______ _                           _       
+  / ____(_)   | |      |  ____| |                         | |      
+ | (___  _  __| | ___  | |__  | | ___ _ __ ___   ___ _ __ | |_ ___ 
+  \___ \| |/ _` |/ _ \ |  __| | |/ _ \ '_ ` _ \ / _ \ '_ \| __/ __|
+  ____) | | (_| |  __/ | |____| |  __/ | | | | |  __/ | | | |_\__ \
+ |_____/|_|\__,_|\___| |______|_|\___|_| |_| |_|\___|_| |_|\__|___/
+__________________________________________________________________________________________________*/
+
+#header h1{
+	margin:0px;
+}
+#bottonSide{
+	margin-left: -14px;
+    margin-top: -20px;
+    position: absolute;
+    height: 59px;
+    width: 50px;
+}
+#ascrail2001{
+	z-index:9999 !important;
+}
+.sidebar-menu{
+	margin-top:90px !important;
+}
+#sidebar{
+	top:0px;
+	z-index:800;
+}
+.logo{
+	height: 59px;
+    left: 50px;
+    position: absolute;
+    width: 300px;
+}
+.top-menu{
+	display:none;
+}
+.bar .title{
+	color:#424a5d;
+}
+/*_________________________________________________________________________________________________
+  __  __           _       _           
+ |  \/  |         | |     | |          
+ | \  / | ___   __| |_   _| | ___  ___ 
+ | |\/| |/ _ \ / _` | | | | |/ _ \/ __|
+ | |  | | (_) | (_| | |_| | |  __/\__ \
+ |_|  |_|\___/ \__,_|\__,_|_|\___||___/
+____________________________________________________________________________________________________*/
+
+.y-axis{
+	width:96%;
+}
+.black-bg{
+	top:0px;
+}
+
+
+.mt0 .white-panel{
+	height:500px;
+}
+
+.mt .white-panel{
+	height:414px;
+}
+.mt2{
+	margin-top:80px;
+}
+.mt2 .white-panel{
+	height:295px;
+}
+.mt2 h5{
+	margin-top:0px !important;
+}
+.mt2 .boxContent {
+	height:230px;
+}
+.auto-scale{
+	height:auto !important;
+}
+.white-header{
+	background-color:#424a5d !important;
+	color: #e5eaf9;
+}
+.y-axis li span{
+	margin-left:-50px !important;
+}
+.boxContent{
+	margin:auto;
+	margin-top:0px;
+	color:#5D639B;
+}
+#timerSLA .boxContent, #requested_status .boxContent, #processing_status .boxContent{
+	margin-top:40px;
+}
+#timerSLA p{
+	font-style:oblique;
+}
+#requested_status .btn, #processing_status .btn{
+	border-color:#424A5D !important;
+	color:#ffffff!important;
+	background:none !important;
+	background-color: #992510 !important;
+	box-shadow:none !important;
+}
+.boxContent h3{
+	font-weight: bold;
+	color:#424a5d;
+	margin-bottom: 20px;
+	font-size:1.5em;
+}
+#doneToday .boxContent{
+	margin-top:6%;
+	width:100%;
+}
+#notDoneToday .boxContent{
+	margin-top:35px;
+	width:100%;
+}
+#error{
+	color:#C53D31;
+}
+#notDoneToday h3{
+	color:#c53d31;
+}
+#published{
+	color:#559052;
+}
+#handover{
+	color:#80818e;
+}
+#toDo{
+	color:#cc6b09 !important;
+}
+#userID h3{
+	font-size:1.2em;
+	margin-top:10px;
+	margin-bottom:10px
+}
+.logout{
+	float:right;
+	margin-top: 13px;
+	margin-right: 20px;
+}
+#connectedUsers td{
+	border: 1px solid;
+}
+#data_inbond_day .bar2 {
+    float: left;
+    height: 100%;
+    margin: 0 1.54%;
+    position: relative;
+    text-align: center;
+    width: 1%;
+    z-index: 10;
+}
+
+.fail_bar, .succes_bar, .error_bar{
+	-moz-transition: all 0.3s ease 0s;
+    background: none repeat scroll 0 0;
+    border-radius: 5px 5px 0 0;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.succes_bar{
+    background: #559052;
+    color: #68DFF0;
+    margin-left: -55%;
+}
+.fail_bar{
+    background: #cc6b09;
+    color: #68DFF0;
+    margin-left: 65%;
+}
+.error_bar{
+	background: #C53D31;
+    color: #68DFF0;
+    margin-left: 185%;
+}
+.bar2 .title{
+	bottom: -30px;
+    font-size: 11px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    color: #424A5D;
+}
+#data_inbond_week .bar{
+	margin: 0 1.9%;
+	width: 2.75%;
+}
+
+#data_inbond_week .succes_bar{
+    margin-left: -20%;
+}
+#data_inbond_week .bar .fail_bar{
+	margin-left: 40%;
+}
+#data_inbond_week .bar .error_bar{
+	margin-left: 100%;
+}
+#sidebar .mt{
+	margin-top: 10px;
+}
+#sidebar .active span, li a:hover, li a:focus{
+	color:#424A5D !important;
+}
+
+.sub-menu .sub .active{
+	background:none repeat scroll 0 0 transparent !important;
+	color:#ffffff !important;
+}
+.sub-menu .sub a:hover{
+	color:#ffffff !important;
+}
+.sidebar-menu a{
+	font-size:14px !important;
+}
+.t1{
+	margin-top:0px;
+}
+.t1 .white-panel{
+	height: 300px;
+}
+.t1 .boxContent{
+	height: 240px;
+}
+.comment_histo{
+	height: 450px !important;
+}
+.t2 .white-panel{
+	min-height: 100px !important;
+}
+
+.t2 .boxContent{
+	min-height: 100px;
+}
+.b1{
+	margin-top:30px;
+}
+#form_full_page{
+	margin:auto;
+}
+
+/*#form_full_page input{
+	height: 20px;
+    width: 300px;
+    padding: 0px;
+}
+
+#form_full_page input[type="checkbox"]{ /*by mohamed, gérer checkbox dashboard fil rm/cso   *//*
+	height: 0px;
+    width: 0px;
+    padding: 0px;
+}*/
+
+#form_full_page label{
+	margin-right:10px;
+}
+.FormBar label{
+	margin-left: 1%;
+}
+.FormBar input{
+	width: 15% !important;
+}
+#textEditor, #textEditor p{
+	text-align:left !important;
+	text-align: inherit !important;
+    text-decoration: inherit !important;
+    margin-left: inherit !important;
+    font-weight: inherit !important;
+}
+.form-center{
+	margin:auto;
+}
+#traksEdit input{
+	width: 150px;
+}
+#form_AWBPrefix{
+	width: 30px !important;
+}
+#form_AWBNumber{
+	width: 80px !impotant;
+}
+#traksEdit textarea{
+	width: 500px;
+	padding: 0.3%;
+}
+
+

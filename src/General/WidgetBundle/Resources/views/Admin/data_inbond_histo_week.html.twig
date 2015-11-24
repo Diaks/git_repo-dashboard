@@ -1,0 +1,44 @@
+{# Params: histo_day_tab_success (refers to DBORM:CSIBundle:Entity:Tblfptactivestatus:getSuccesHistoDays)  #}
+
+<div class="white-panel pn">
+	<div class="white-header">
+		<h5>Data Inbound (2 Weeks)</h5>
+	</div>
+    <div class="custom-bar-chart" id="data_inbond_week">
+        <ul class="y-axis">
+        	<li><span>1500</span></li>
+        	<li><span>1200</span></li>
+        	<li><span>900</span></li>
+        	<li><span>600</span></li>
+        	<li><span>300</span></li>
+        	<li><span>0</span></li>
+        </ul>
+        	{% set i = 0 %}
+        	{% for day in histo_day_tab_success %}
+				<div class="bar">
+					<div class="title">{{ day[0] }}</div>
+					<div class="succes_bar" data-original-title = "{{ day[1] }}"
+                 		 data-toggle="tooltip" data-placement="top" style="height:{{ day[2] }}%">{{ day[1] }}</div>
+                 	<div class="fail_bar" data-original-title = "{{ histo_day_tab_error[i][1] }}"
+                 	 	data-toggle="tooltip" data-placement="top" style="height:{{ histo_day_tab_error[i][2] }}%"></div>	
+                 	<div class="error_bar" data-original-title = "{{ histo_day_tab_crit_error[i][1] }}"
+                 	 	data-toggle="tooltip" data-placement="top" style="height:{{ histo_day_tab_crit_error[i][2] }}%"></div>		
+        		</div>
+        		{% set i = i+1 %}
+        	{% endfor %}
+        	
+        	<!-- 
+        	{% set i = 0 %}
+        	{% for day in histo_day_tab_success %}
+				<div class="bar">
+					<div class="title">{{ day[0] }}</div>
+					<div class="value tooltips succes_bar" data-original-title = "{{ day[1] }}"
+                 		 data-toggle="tooltip" data-placement="top">{{ day[2] }}%</div>
+                 	<div class="value tooltips fail_bar" data-original-title = "{{ histo_day_tab_error[i][1] }}"
+                 	 	data-toggle="tooltip" data-placement="top">{{ histo_day_tab_error[i][2] }}%</div>		
+        		</div>
+        		{% set i = i+1 %}
+        	{% endfor %} 
+        	-->
+	</div>
+</div>

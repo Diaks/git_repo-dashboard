@@ -1,0 +1,21 @@
+Tblcountry:
+    type: entity
+    table: TblCountry
+    id:
+        pkCountryCode:
+            type: string
+            nullable: false
+            length: 5
+            fixed: false
+            id: true
+            column: PK_Country_code
+            generator:
+                strategy: IDENTITY
+    fields:
+        country:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: Country
+    lifecycleCallbacks: {  }

@@ -1,0 +1,42 @@
+Tblfdverror:
+    type: entity
+    table: tblFDVError
+    id: {  }
+    fields:
+        flight:
+            type: string
+            nullable: false
+            length: 20
+            fixed: false
+            column: Flight
+        evtdate:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            column: EvtDate
+        ref:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: Ref
+        desc:
+            type: string
+            nullable: true
+            length: 500
+            fixed: false
+            column: Desc
+        formatError:
+            type: string
+            nullable: true
+            length: 500
+            fixed: false
+            column: format_error
+        matricule:
+            type: string
+            nullable: true
+            length: 30
+            fixed: false
+            column: Matricule
+    lifecycleCallbacks: {  }

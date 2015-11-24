@@ -1,0 +1,67 @@
+<?php
+
+namespace DBORM\KLMBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Tblfpterror
+ *
+ * @ORM\Table(name="TblFPTError")
+ * @ORM\Entity
+ */
+class Tblfpterror
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="PK_id", type="string", length=50, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $pkId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="FK_FlightNumber", type="string", length=50, nullable=true)
+     */
+    private $fkFlightnumber;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="FK_FlightDate", type="string", length=50, nullable=true)
+     */
+    private $fkFlightdate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="FK_Version", type="text", length=-1, nullable=true)
+     */
+    private $fkVersion;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="FK_User_id", type="string", length=10, nullable=true)
+     */
+    private $fkUserId;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="Date", type="datetime", nullable=true)
+     */
+    private $date;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Comment", type="text", length=-1, nullable=true)
+     */
+    private $comment;
+
+
+}

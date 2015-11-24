@@ -1,0 +1,93 @@
+Tblfptflights:
+    type: entity
+    table: TblFPTFlights
+    indexes:
+        IDX_C6DF75A855505656:
+            columns:
+                - FK_User_id
+        IDX_C6DF75A8A1EFF39A:
+            columns:
+                - FK_AircraftType_id
+    id:
+        pkFlightnumber:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            id: true
+            column: PK_FlightNumber
+        pkFlightdate:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            id: true
+            column: PK_FlightDate
+        pkVersion:
+            type: float
+            nullable: false
+            precision: 24
+            scale: 0
+            id: true
+            column: PK_Version
+    fields:
+        edt:
+            type: string
+            nullable: true
+            length: 10
+            fixed: false
+            column: EDT
+        datecreation:
+            type: datetime
+            nullable: true
+            column: DateCreation
+        datedflightinstruction:
+            type: text
+            nullable: true
+            length: -1
+            fixed: false
+            column: DatedFlightInstruction
+        finalisation:
+            type: smallint
+            nullable: true
+            unsigned: false
+            default: '0'
+            column: Finalisation
+        prepointage:
+            type: smallint
+            nullable: true
+            unsigned: false
+            default: '0'
+            column: Prepointage
+        inratable:
+            type: smallint
+            nullable: true
+            unsigned: false
+            default: '0'
+            column: Inratable
+        ponctualite:
+            type: smallint
+            nullable: true
+            unsigned: false
+            default: '0'
+            column: Ponctualite
+    manyToOne:
+        fkUser:
+            targetEntity: Tbluser
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                FK_User_id:
+                    referencedColumnName: PK_id
+            orphanRemoval: false
+        fkAircrafttype:
+            targetEntity: Tblaircrafttype
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                FK_AircraftType_id:
+                    referencedColumnName: PK_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

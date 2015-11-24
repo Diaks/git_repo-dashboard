@@ -1,0 +1,233 @@
+Tblfptsnapshot:
+    type: entity
+    table: tblFPTSnapshot
+    indexes:
+        IX_tblFPTSnapshot:
+            columns:
+                - DateCreation
+    id: {  }
+    fields:
+        flightnumber:
+            type: string
+            nullable: true
+            length: 10
+            fixed: false
+            column: FlightNumber
+        flightdate:
+            type: string
+            nullable: true
+            length: 10
+            fixed: false
+            column: FlightDate
+        datecreation:
+            type: datetime
+            nullable: true
+            column: DateCreation
+        analyst:
+            type: string
+            nullable: true
+            length: 15
+            fixed: false
+            column: Analyst
+        handover:
+            type: boolean
+            nullable: true
+            column: Handover
+        aircrafttype:
+            type: string
+            nullable: true
+            length: 10
+            fixed: false
+            column: AircraftType
+        routing:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: Routing
+        edt:
+            type: string
+            nullable: true
+            length: 10
+            fixed: false
+            column: EDT
+        opticofweight:
+            type: float
+            nullable: true
+            precision: 53
+            scale: 0
+            column: OpticofWeight
+        opticofpmd:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: OpticofPMD
+        opticofpld:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: OpticofPLD
+        opticofake:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: OpticofAKE
+        totalweight:
+            type: float
+            nullable: true
+            precision: 53
+            scale: 0
+            column: TotalWeight
+        totalpmd:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: TotalPMD
+        totalpld:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: TotalPLD
+        totalake:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: TotalAKE
+        dskpmd:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: DSKPMD
+        dskpld:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: DSKPLD
+        dskake:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: DSKAKE
+        alertother:
+            type: boolean
+            nullable: true
+            column: AlertOther
+        alertsensitive:
+            type: boolean
+            nullable: true
+            column: AlertSensitive
+        alertdsk:
+            type: boolean
+            nullable: true
+            column: AlertDSK
+        alertavih:
+            type: boolean
+            nullable: true
+            column: AlertAVIH
+        alertuld:
+            type: boolean
+            nullable: true
+            column: AlertULD
+        alertcho:
+            type: boolean
+            nullable: true
+            column: AlertCHO
+        alerteco:
+            type: boolean
+            nullable: true
+            column: AlertECO
+        totalgrossweight:
+            type: float
+            nullable: true
+            precision: 53
+            scale: 0
+            column: TotalGrossWeight
+        analystid:
+            type: string
+            nullable: true
+            length: 10
+            fixed: false
+            column: AnalystID
+        workorder:
+            type: boolean
+            nullable: true
+            column: WorkOrder
+        alertoptiplus:
+            type: boolean
+            nullable: true
+            column: AlertOPTIPlus
+        datedfltInstruct:
+            type: string
+            nullable: true
+            length: 1024
+            fixed: false
+            column: DatedFlt_Instruct
+        pr„©pointage:
+            type: boolean
+            nullable: true
+            column: Pr√©pointage
+        sdxake:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: SDXAKE
+        sdxlooseWgt:
+            type: float
+            nullable: true
+            precision: 53
+            scale: 0
+            column: SDXLoose_WGT
+        sdxlooseVol:
+            type: float
+            nullable: true
+            precision: 53
+            scale: 0
+            column: SDXLoose_VOL
+        version:
+            type: float
+            nullable: true
+            precision: 53
+            scale: 0
+            column: Version
+        narWgt:
+            type: float
+            nullable: true
+            precision: 53
+            scale: 0
+            column: NAR_WGT
+        onhWgt:
+            type: float
+            nullable: true
+            precision: 53
+            scale: 0
+            column: ONH_WGT
+        naronhWgt:
+            type: float
+            nullable: true
+            precision: 53
+            scale: 0
+            column: NARONH_WGT
+        narPour:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: NAR_POUR
+        onhPour:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: ONH_POUR
+        naronhPour:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: NARONH_POUR
+        alertoptiplusTransit:
+            type: boolean
+            nullable: true
+            column: AlertOPTIPlus_Transit
+        finalisation:
+            type: boolean
+            nullable: true
+            column: Finalisation
+    lifecycleCallbacks: {  }

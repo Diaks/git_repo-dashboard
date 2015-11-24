@@ -1,0 +1,3 @@
+dbormcsi_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: DBORMCSIBundle:Default:index }

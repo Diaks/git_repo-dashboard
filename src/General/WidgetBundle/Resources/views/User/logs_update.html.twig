@@ -1,0 +1,50 @@
+{% extends '::base.html.twig' %}
+{% block title %}Admin home page{% endblock %}
+
+{% block body %}
+
+<div class="white-panel pn donut-chart" style ="margin-top:30px; height: 360px;">
+      <div class="white-header">
+			<h5>Edit a User</h5>
+      </div>
+		<div class="row" id="addRobot" style ="margin:auto;">
+			<div class="col-sm-12 col-xs-12 boxContent"  style="margin-top:30px; width:98%">
+				
+				<form id="form_full_page" class="FormAlign">
+          		{{ form_errors(form.Matricule) }}
+          		{{ form_widget(form.Matricule) }}
+          		<br />
+          		{{ form_label(form.FirstName) }}
+          		{{ form_errors(form.FirstName) }}
+          		{{ form_widget(form.FirstName) }}
+          		<br />
+          		{{ form_label(form.LastName) }}
+          		{{ form_errors(form.LastName) }}
+          		{{ form_widget(form.LastName) }}
+          		<br />
+          		{{ form_label(form.Password) }}
+          		{{ form_errors(form.Password) }}
+          		{{ form_widget(form.Password) }}
+          		<br />
+          		{{ form_label(form.Departement) }}
+          		{{ form_errors(form.Departement) }}
+          		{{ form_widget(form.Departement) }}
+          		<br />
+          		{{ form_errors(form.Sector) }}
+          		{{ form_widget(form.Sector) }}
+          		<br />
+          		{{ form_errors(form.TypeProfil) }}
+          		{{ form_widget(form.TypeProfil) }}
+          		<br /><br />
+          		<div class="submit">
+						{{ form_widget(form.Save, { 'attr': {'class': 'btn btnT1'} }) }}
+				</div>
+				
+				{{ form_rest(form) }}
+				</form>
+          	
+			</div>
+	    </div>
+</div>
+				
+{% endblock %}

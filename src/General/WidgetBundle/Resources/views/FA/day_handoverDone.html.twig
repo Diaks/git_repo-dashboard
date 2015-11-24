@@ -1,0 +1,31 @@
+{# Calls: RMCARGODashboardAdminBundle:Admin:getNbDayDone  #}
+
+<script type="text/javascript">
+	$(function() {
+		setInterval(function() {
+    		$('#HandoverDone').load(location.href+' #HandoverDone');
+  		}, 30000);
+	});
+</script>
+
+<div class="white-panel pn donut-chart">
+      <div class="white-header">
+			<h5>Handover Done</h5>
+      </div>
+		<div class="row" id="HandoverDone" style ="margin:auto; margin-top:0px;">
+			<div class="col-sm-12 col-xs-12 boxContent"  style="overflow-y:scroll; height:230px; width:98%">
+				<table>
+    				<tr>
+    					<th> Flight </th><th> EDT </th><th> SubSector </th>
+    					{% for Flight in HandoverDone %}
+        					<tr>
+        						<td>{{ Flight.PK_Flight }}</td>
+        						<td>{{ Flight.ETD_Time }}</td>
+        						<td>{{ Flight.FK_subSector_id }}</td>
+        					</tr>
+    					{% endfor %}
+    				</tr>
+				</table>
+			</div>
+	    </div>
+</div>

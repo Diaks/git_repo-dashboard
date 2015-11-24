@@ -1,0 +1,72 @@
+Tblfptwaitinglist:
+    type: entity
+    table: tblFPTWaitingList
+    id: {  }
+    fields:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            column: ID
+        flight:
+            type: string
+            nullable: false
+            length: 20
+            fixed: false
+            column: Flight
+        version:
+            type: float
+            nullable: true
+            precision: 53
+            scale: 0
+            column: Version
+        status:
+            type: string
+            nullable: true
+            length: 20
+            fixed: false
+            column: Status
+        evtdatetime:
+            type: datetime
+            nullable: true
+            column: EvtdateTime
+        comment:
+            type: string
+            nullable: true
+            length: 200
+            fixed: false
+            column: Comment
+        rmuser:
+            type: string
+            nullable: true
+            length: 20
+            fixed: false
+            column: RMUser
+        starttime:
+            type: datetime
+            nullable: true
+            column: StartTime
+        alreadytried:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: AlreadyTried
+        idType:
+            type: string
+            nullable: true
+            length: 1
+            fixed: false
+            column: ID_Type
+        parameter1:
+            type: string
+            nullable: true
+            length: 250
+            fixed: false
+            column: Parameter1
+        parameter2:
+            type: string
+            nullable: true
+            length: 250
+            fixed: false
+            column: Parameter2
+    lifecycleCallbacks: {  }

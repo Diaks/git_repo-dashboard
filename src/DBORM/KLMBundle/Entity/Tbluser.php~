@@ -1,0 +1,87 @@
+<?php
+
+namespace DBORM\KLMBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Tbluser
+ *
+ * @ORM\Table(name="TblUser", indexes={@ORM\Index(name="IDX_5FED80ACA390C97B", columns={"FK_Sector_id"}), @ORM\Index(name="IDX_5FED80ACE5E4B93", columns={"FK_TypeProfil_id"})})
+ * @ORM\Entity
+ */
+class Tbluser
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="PK_id", type="string", length=50, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $pkId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="FirstName", type="string", length=50, nullable=true)
+     */
+    private $firstname;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="LastName", type="string", length=50, nullable=true)
+     */
+    private $lastname;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Departement", type="string", length=50, nullable=true)
+     */
+    private $departement;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="UserStartDate", type="datetime", nullable=true)
+     */
+    private $userstartdate;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="UserEndDate", type="datetime", nullable=true)
+     */
+    private $userenddate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Password", type="text", length=-1, nullable=true)
+     */
+    private $password;
+
+    /**
+     * @var \Tblsector
+     *
+     * @ORM\ManyToOne(targetEntity="Tblsector")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="FK_Sector_id", referencedColumnName="PK_id")
+     * })
+     */
+    private $fkSector;
+
+    /**
+     * @var \Tbltypeprofil
+     *
+     * @ORM\ManyToOne(targetEntity="Tbltypeprofil")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="FK_TypeProfil_id", referencedColumnName="PK_id")
+     * })
+     */
+    private $fkTypeprofil;
+
+
+}

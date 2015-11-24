@@ -1,0 +1,51 @@
+{% extends '::base.html.twig' %}
+{% block title %}Admin home page{% endblock %}
+
+{% block body %}
+    <!-- {# % render controller('LiveGeekBundle:Default:onlineUsers') % #}-->
+    <div class="row">
+		<div class="col-lg-12 main-chart">
+			<h1>Prio Monitoring</h1>
+			
+			<div class='row mt'>
+			<form>
+				<div class="col-md-12 col-sm-12">
+					{% for key,type_array in prio_array %}
+						<div class="white-panel pn donut-chart" style="height: auto; margin-top: 30px;">
+      						<div class="white-header">
+								<h5>Editing Table: {{ key }}</h5>
+      						</div>
+      						<div class="row" style ="margin:auto; margin-top:0px;">
+							<div class="col-sm-12 col-xs-12 boxContent"  style="width:98%">
+								<table>
+    								<tr>
+    									<th> Name </th><th> Value </th><th> New Value </th>
+    									{% for prio in type_array %}
+        									<tr>
+        										<td>{{ prio.uld }}</td>
+        										<td>{{ prio.priority }}</td>
+        										
+        										<td style="width:30%;">{{ form_errors(attribute(form, key ~ '_' ~ prio.uld)) }}
+        										{{ form_widget(attribute(form, key ~ '_' ~ prio.uld)) }}</td>
+        									</tr>
+        								{% endfor %}
+	    							</tr>
+								</table>
+							</div>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+				<div class="submit" style="text-align:center;">
+					{{ form_widget(form.Update, { 'attr': {'class': 'btn btnT1', 'style': 'margin-top:20px; width:135px;'} }) }}
+					{{ form_row(form._token) }}
+					
+					{{ form_rest(form) }}
+				</div>
+			</form>
+			</div>
+		</div>
+			
+	</div>
+	
+{% endblock %}

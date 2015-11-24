@@ -1,0 +1,73 @@
+<?php
+
+namespace DBORM\KLMBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Tblairport
+ *
+ * @ORM\Table(name="TblAirport", indexes={@ORM\Index(name="IDX_8AE443B2E95E0CEC", columns={"FK_City_code"}), @ORM\Index(name="IDX_8AE443B28C6B24DB", columns={"FK_Country_code"})})
+ * @ORM\Entity
+ */
+class Tblairport
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="PK_Airport_code", type="string", length=5, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $pkAirportCode;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Airport", type="string", length=50, nullable=true)
+     */
+    private $airport;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="FSCZone", type="string", length=50, nullable=true)
+     */
+    private $fsczone;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="FSCZoneID1", type="string", length=50, nullable=true)
+     */
+    private $fsczoneid1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="FSCZoneID2", type="string", length=50, nullable=true)
+     */
+    private $fsczoneid2;
+
+    /**
+     * @var \Tblcity
+     *
+     * @ORM\ManyToOne(targetEntity="Tblcity")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="FK_City_code", referencedColumnName="PK_City_code")
+     * })
+     */
+    private $fkCityCode;
+
+    /**
+     * @var \Tblcountry
+     *
+     * @ORM\ManyToOne(targetEntity="Tblcountry")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="FK_Country_code", referencedColumnName="PK_Country_code")
+     * })
+     */
+    private $fkCountryCode;
+
+
+}

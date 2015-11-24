@@ -1,0 +1,18 @@
+{% extends '::base.html.twig' %}
+{% block title %}Admin home page{% endblock %}
+
+{% block body %}
+    <div class="row">
+		<div class="col-lg-12 main-chart">
+			<h1>Group Monitoring</h1>
+			
+			<div class='row mt'>
+				<div class="col-md-12 col-sm-12" style="margin-top: 55px">
+					{{ include('GeneralWidgetBundle:Admin:group_monitoring.html.twig ') }}
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	
+{% endblock %}

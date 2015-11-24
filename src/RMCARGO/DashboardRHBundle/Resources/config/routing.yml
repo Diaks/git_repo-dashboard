@@ -1,0 +1,3 @@
+rmcargo_dashboard_rh_homepage:
+    path:     /home
+    defaults: { _controller: 'RMCARGODashboardRHBundle:Default:index' }

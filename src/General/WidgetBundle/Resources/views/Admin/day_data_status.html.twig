@@ -1,0 +1,27 @@
+{# Calls: RMCARGODashboardAdminBundle:Admin:getNbDayDone  #}
+{# Calls: RMCARGODashboardAdminBundle:Admin:getNbDayError  #}
+{# Calls: RMCARGODashboardAdminBundle:Admin:getNbCritError  #}
+
+<script type="text/javascript">
+	$(function() {
+		setInterval(function() {
+    		$('#day_activity').load(location.href+' #day_activity');
+  		}, 25000); //refresh every 25s
+	});
+</script>
+
+<div class="white-panel pn donut-chart">
+      <div class="white-header">
+			<h5>General Day Status</h5>
+      </div>
+		<div class="row" id="day_activity" style =" margin:auto; margin-top:0px;">
+			<div class="col-sm-12 col-xs-12 boxContent">
+			{% set nb_done = render(controller('RMCARGODashboardAdminBundle:Admin:getNbDayDone')) %}
+			{% set nb_fpterror = render(controller('RMCARGODashboardAdminBundle:Admin:getNbDayError')) %}
+			{% set nb_dberror = render(controller('RMCARGODashboardAdminBundle:Admin:getNbCritError')) %}
+				<h3 id ="published" > {{ nb_done }} Well Passed </h3>
+				<h3 id ="toDo" > {{ nb_fpterror }} Flight Planning Error </h3>
+				<h3 id ="error" > {{ nb_dberror }} Database error </h3>
+			</div>
+	    </div>
+</div>
